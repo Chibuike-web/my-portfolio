@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { HomePage } from "@/components/home-page";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
 	title: "Product Engineer & Design Engineer",
@@ -26,5 +27,9 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-	return <HomePage />;
+	return (
+		<Suspense>
+			<HomePage />
+		</Suspense>
+	);
 }

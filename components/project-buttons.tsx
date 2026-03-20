@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Button } from "@/components/button";
 import { RightArrowIcon } from "@/components/icons";
 import type { ProjectType } from "@/lib/data";
+import type { Route } from "next";
 
 export function ProjectButtons({ type }: { type: ProjectType | ProjectType[] }) {
 	const [hovered, setHovered] = useState("");
@@ -56,7 +57,7 @@ export function ProjectButtons({ type }: { type: ProjectType | ProjectType[] }) 
 			>
 				<Button
 					as="link"
-					href={type.link}
+					href={type.link as Route}
 					variant="primary"
 					size="md"
 					fullWidth

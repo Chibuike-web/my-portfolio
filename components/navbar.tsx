@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { useRealTime } from "@/hooks/use-real-time";
 import { CancelIcon, Logo, MenuIcon, RightArrowIcon } from "@/components/icons";
+import type { Route } from "next";
 
 const resumeUrl =
 	"https://drive.google.com/file/d/1-Pp56NqO3jCauLwMdeoSMwgWw7UvlGnD/view?usp=sharing";
@@ -98,13 +99,7 @@ function MobileNav({ pathname }: { pathname: string }) {
 	);
 }
 
-function MobileLinks({
-	pathname,
-	closeMenu,
-}: {
-	pathname: string;
-	closeMenu: () => void;
-}) {
+function MobileLinks({ pathname, closeMenu }: { pathname: string; closeMenu: () => void }) {
 	const time = useRealTime();
 
 	return (
@@ -145,7 +140,7 @@ function NavItem({
 	active,
 	children,
 }: {
-	href: string;
+	href: Route;
 	active: boolean;
 	children: React.ReactNode;
 }) {
@@ -168,7 +163,7 @@ function MobileNavItem({
 	onClick,
 	children,
 }: {
-	href: string;
+	href: Route;
 	active: boolean;
 	onClick: () => void;
 	children: React.ReactNode;

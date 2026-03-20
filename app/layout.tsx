@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 	},
 
 	openGraph: {
-		title: "Chibuike Maduabuchi | Product Engineer",
+		title: "Chibuike Maduabuchi | Design Engineer",
 		description: "AI systems, design engineering, and product-focused frontend work.",
 		url: "https://chibuike-maduabuchi.vercel.app",
 		siteName: "Chibuike Maduabuchi",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Chibuike Maduabuchi | Product Engineer",
+		title: "Chibuike Maduabuchi | Design Engineer",
 		description: "AI systems, design engineering, and product-focused frontend work.",
 		images: ["/og-image.png"],
 	},

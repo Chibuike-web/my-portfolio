@@ -3,11 +3,11 @@ import { HomePage } from "@/components/home-page";
 import { Suspense } from "react";
 
 export const metadata: Metadata = {
-	title: "Product Engineer & Design Engineer",
+	title: "Design Engineer",
 	description:
 		"Chibuike Maduabuchi builds AI-driven systems and high-trust digital products. Selected work across design engineering, product design, and frontend development.",
 	openGraph: {
-		title: "Chibuike Maduabuchi | Product Engineer",
+		title: "Chibuike Maduabuchi | Design Engineer",
 		description: "AI systems, design engineering, and product-focused frontend work.",
 		url: "https://chibuike-maduabuchi.vercel.app",
 		images: [
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Chibuike Maduabuchi | Product Engineer",
+		title: "Chibuike Maduabuchi | Design Engineer",
 		description: "AI systems, design engineering, and product-focused frontend work.",
 		images: ["/og-image.png"],
 	},

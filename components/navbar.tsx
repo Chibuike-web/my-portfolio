@@ -16,12 +16,8 @@ export function Navbar() {
 
 	return (
 		<>
-			<div className="hidden min-[800px]:block">
-				<DesktopNav pathname={pathname} />
-			</div>
-			<div className="min-[800px]:hidden">
-				<MobileNav pathname={pathname} />
-			</div>
+			<DesktopNav pathname={pathname} />
+			<MobileNav pathname={pathname} />
 		</>
 	);
 }
@@ -30,7 +26,7 @@ function DesktopNav({ pathname }: { pathname: string }) {
 	const time = useRealTime();
 
 	return (
-		<nav className="py-5.5">
+		<nav className="py-4 hidden min-[800px]:block sticky top-0 bg-white z-10">
 			<header className="mx-auto grid w-full max-w-[81rem] grid-cols-[1fr_250px_1fr] gap-6 px-6 xl:px-0">
 				<Link
 					href="/"
@@ -67,14 +63,14 @@ function MobileNav({ pathname }: { pathname: string }) {
 	const [isOpen, setIsOpen] = useState(false);
 
 	useEffect(() => {
-		document.body.style.overflow = isOpen ? "hidden" : "";
+		document.documentElement.style.overflow = isOpen ? "hidden" : "";
 		return () => {
-			document.body.style.overflow = "";
+			document.documentElement.style.overflow = "";
 		};
 	}, [isOpen]);
 
 	return (
-		<nav className="bg-white py-4">
+		<nav className="bg-white py-3 min-[800px]:hidden sticky top-0 z-10">
 			<header className="mx-auto flex w-full max-w-[81rem] items-center justify-between px-6 xl:px-0">
 				<Link
 					href="/"

@@ -3,7 +3,7 @@ import { HomePage } from "@/components/home-page";
 import { Suspense } from "react";
 
 export const metadata: Metadata = {
-	title: "Design Engineer",
+	title: "Chibuike Maduabuchi | Design Engineer",
 	description:
 		"Chibuike Maduabuchi builds AI-driven systems and high-trust digital products. Selected work across design engineering, product design, and frontend development.",
 	openGraph: {

@@ -27,7 +27,7 @@ export function HomePage() {
 			<HomeHero />
 
 			<div className="mx-auto mt-[3.25rem] flex w-full max-w-[81rem] gap-2 px-6 md:mt-[6.5rem] xl:px-0">
-				<Tabs.Root className="rounded-full bg-gray-100" defaultValue="all">
+				<Tabs.Root className="rounded-full bg-gray-100" value={selectedCategory}>
 					<Tabs.List className="relative z-0 flex gap-1 p-1" loopFocus activateOnFocus>
 						{filter.map((categoryItem) => (
 							<Tabs.Tab

@@ -34,7 +34,9 @@ export function HomePage() {
 								key={categoryItem.id}
 								value={categoryItem.id}
 								onClick={() =>
-									router.push(categoryItem.id === "all" ? "/" : `/?category=${categoryItem.id}`)
+									router.push(categoryItem.id === "all" ? "/" : `/?category=${categoryItem.id}`, {
+										scroll: false,
+									})
 								}
 								className="px-3 py-1.5 data-[active]:text-white rounded-full text-sm focus:outline-0 focus-visible:ring-2 focus-visible:ring-gray-300 focus-visible:ring-offset-2"
 							>

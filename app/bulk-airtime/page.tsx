@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Button } from "@/components/button";
-import { CancelIcon } from "@/components/icons";
 import { LazyImage } from "@/components/lazy-image";
 import heroImage from "@/assets/bulk-airtime/hero.webp";
 import firstImage from "@/assets/bulk-airtime/first.webp";
@@ -11,6 +10,7 @@ import fifthImage from "@/assets/bulk-airtime/fifth.webp";
 import sixthImage from "@/assets/bulk-airtime/sixth.webp";
 import seventhImage from "@/assets/bulk-airtime/seventh.webp";
 import eighthImage from "@/assets/bulk-airtime/eighth.webp";
+import { RiCloseLine } from "@remixicon/react";
 
 export const metadata: Metadata = {
 	title: "Bulk Airtime",
@@ -28,7 +28,7 @@ export default function BulkAirtimePage() {
 					</p>
 				</header>
 				<Button as="link" href="/" fullWidth={false} aria-label="Back to home">
-					<CancelIcon />
+					<RiCloseLine className="size-5" />
 				</Button>
 			</nav>
 

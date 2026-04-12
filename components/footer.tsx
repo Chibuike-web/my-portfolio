@@ -1,16 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import { AnimatePresence, motion } from "motion/react";
-import { BackArrowIcon } from "@/components/icons";
 import { useCopyEmail } from "@/hooks/use-copy-email";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
 import type { Route } from "next";
+import { RiCheckLine, RiCornerDownLeftLine } from "@remixicon/react";
 
 export function Footer() {
 	const pathname = usePathname();
-	const { copyStatus, copyEmail } = useCopyEmail();
+	const { copied, copyEmail } = useCopyEmail();
 
 	return (
 		<footer className="bg-white py-10 text-gray-700">
@@ -85,29 +84,17 @@ export function Footer() {
 						<p>Let&apos;s build something together.</p>
 						<button
 							onClick={copyEmail}
-							className="w-full cursor-pointer break-words text-left font-semibold select-all"
+							className="w-full cursor-pointer flex gap-1 break-words text-left font-semibold select-all"
 						>
 							chibuikemaduabuchi2023@gmail.com
+							{copied && <RiCheckLine className="size-5" />}
 						</button>
-						<AnimatePresence initial={false}>
-							{copyStatus ? (
-								<motion.span
-									initial={{ opacity: 0, y: -5 }}
-									animate={{ opacity: 1, y: 0 }}
-									exit={{ opacity: 0, y: -5 }}
-									transition={{ duration: 0.2 }}
-									className="absolute bottom-[-10px] left-0 translate-y-full font-medium text-gray-700"
-								>
-									{copyStatus}
-								</motion.span>
-							) : null}
-						</AnimatePresence>
 					</div>
 					<button
 						className="mt-auto flex w-max items-center gap-1.5"
 						onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
 					>
-						<BackArrowIcon /> <span className="font-semibold">Back to the top</span>
+						<RiCornerDownLeftLine /> <span className="font-semibold">Back to the top</span>
 					</button>
 				</div>
 			</div>

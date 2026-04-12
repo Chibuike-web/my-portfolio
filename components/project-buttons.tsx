@@ -3,9 +3,9 @@
 import { motion } from "motion/react";
 import { useState } from "react";
 import { Button } from "@/components/button";
-import { RightArrowIcon } from "@/components/icons";
 import type { ProjectType } from "@/lib/data";
 import type { Route } from "next";
+import { RiArrowRightLine } from "@remixicon/react";
 
 export function ProjectButtons({ type }: { type: ProjectType | ProjectType[] }) {
 	const [hovered, setHovered] = useState("");
@@ -38,7 +38,7 @@ export function ProjectButtons({ type }: { type: ProjectType | ProjectType[] }) 
 									animate={{ x: hovered === key ? -10 : 0 }}
 									transition={{ type: "spring", stiffness: 300, damping: 20, bounce: 0 }}
 								>
-									<RightArrowIcon className={index === 0 ? "text-white" : ""} />
+									<RiArrowRightLine className={index === 0 ? "text-white" : ""} />
 								</motion.div>
 							</Button>
 						</motion.div>
@@ -68,7 +68,7 @@ export function ProjectButtons({ type }: { type: ProjectType | ProjectType[] }) 
 						animate={{ x: hovered === "case-study" ? -10 : 0 }}
 						transition={{ type: "spring", stiffness: 300, damping: 20, bounce: 0 }}
 					>
-						<RightArrowIcon className="text-white" />
+						<RiArrowRightLine className="text-white" />
 					</motion.div>
 				</Button>
 			</motion.div>
@@ -95,7 +95,7 @@ export function ProjectButtons({ type }: { type: ProjectType | ProjectType[] }) 
 					animate={{ x: hovered === "external" ? -10 : 0 }}
 					transition={{ type: "spring", stiffness: 300, damping: 20, bounce: 0 }}
 				>
-					<RightArrowIcon className="text-white" />
+					<RiArrowRightLine className="text-white" />
 				</motion.div>
 			</Button>
 		</motion.div>

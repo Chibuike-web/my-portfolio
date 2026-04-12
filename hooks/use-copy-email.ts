@@ -1,26 +1,24 @@
 "use client";
 
-import { useRef, useState } from "react";
-import { handleCopy } from "@/lib/copy";
+import { useState } from "react";
 
 export function useCopyEmail() {
-  const [copyStatus, setCopyStatus] = useState("");
-  const timeoutRef = useRef<number | null>(null);
+	const [copied, setCopied] = useState(false);
 
-  const copyEmail = async () => {
-    await handleCopy(setCopyStatus);
+	const copyEmail = async () => {
+		try {
+			await navigator.clipboard.writeText("chibuikemaduabuchi2023@gmail.com");
+			setCopied(true);
+			setTimeout(() => {
+				setCopied(false);
+			}, 2000);
+		} catch {
+			setCopied(false);
+		}
+	};
 
-    if (timeoutRef.current !== null) {
-      window.clearTimeout(timeoutRef.current);
-    }
-
-    timeoutRef.current = window.setTimeout(() => {
-      setCopyStatus("");
-    }, 800);
-  };
-
-  return {
-    copyStatus,
-    copyEmail,
-  };
+	return {
+		copied,
+		copyEmail,
+	};
 }

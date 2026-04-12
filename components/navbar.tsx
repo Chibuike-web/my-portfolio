@@ -5,8 +5,9 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { useRealTime } from "@/hooks/use-real-time";
-import { CancelIcon, Logo, MenuIcon, RightArrowIcon } from "@/components/icons";
+import { Logo } from "@/components/icons";
 import type { Route } from "next";
+import { RiArrowRightLine, RiCloseLine, RiMenuLine } from "@remixicon/react";
 
 const resumeUrl =
 	"https://drive.google.com/file/d/1-Pp56NqO3jCauLwMdeoSMwgWw7UvlGnD/view?usp=sharing";
@@ -87,7 +88,7 @@ function MobileNav({ pathname }: { pathname: string }) {
 					aria-controls="mobile-navigation-menu"
 					className="flex size-10 items-center justify-center rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-300"
 				>
-					{isOpen ? <CancelIcon /> : <MenuIcon />}
+					{isOpen ? <RiCloseLine /> : <RiMenuLine />}
 				</button>
 			</header>
 			{isOpen ? <MobileLinks pathname={pathname} closeMenu={() => setIsOpen(false)} /> : null}
@@ -119,7 +120,7 @@ function MobileLinks({ pathname, closeMenu }: { pathname: string; closeMenu: () 
 				>
 					<span>Resume</span>
 					<span>
-						<RightArrowIcon className="h-6 w-6" />
+						<RiArrowRightLine />
 					</span>
 				</a>
 			</div>
@@ -175,7 +176,7 @@ function MobileNavItem({
 		>
 			<span>{children}</span>
 			<span>
-				<RightArrowIcon className="h-6 w-6" />
+				<RiArrowRightLine className="h-6 w-6" />
 			</span>
 		</Link>
 	);

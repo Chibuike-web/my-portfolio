@@ -2,8 +2,8 @@
 
 import { motion } from "motion/react";
 import { Button } from "@/components/button";
-import { LinkedinLogo } from "@/components/icons";
 import { CopyEmailButton } from "@/components/copy-email-button";
+import { RiLinkedinFill } from "@remixicon/react";
 
 export function HomeHero() {
 	return (
@@ -58,7 +58,7 @@ export function HomeHero() {
 								fullWidth={false}
 								className="gap-1.5 rounded-full bg-gray-100 text-gray-700"
 							>
-								Linkedin <LinkedinLogo />
+								Linkedin <RiLinkedinFill className="size-4" />
 							</Button>
 						</motion.div>
 					</div>

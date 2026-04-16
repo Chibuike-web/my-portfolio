@@ -19,7 +19,7 @@ export function CopyEmailButton() {
 					className="gap-1.5 rounded-full"
 				>
 					Copy email
-					{copied ? <RiCheckLine className="size-5" /> : <RiFileCopyLine className="size-5" />}
+					{copied ? <RiCheckLine className="size-4" /> : <RiFileCopyLine className="size-4" />}
 				</Button>
 			</motion.div>
 		</div>

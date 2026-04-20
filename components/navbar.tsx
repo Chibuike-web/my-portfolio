@@ -53,7 +53,7 @@ function DesktopNav({ pathname }: { pathname: string }) {
 				</div>
 				<div className="flex w-full items-center justify-end gap-4 font-semibold">
 					<span>Enugu, Nigeria</span>
-					<span className=" w-[5ch] text-right">{time}</span>
+					<span>{time}</span>
 				</div>
 			</header>
 		</nav>

@@ -1,11 +1,24 @@
 "use client";
 
-import { motion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import { Button } from "@/components/button";
 import { CopyEmailButton } from "@/components/copy-email-button";
 import { RiLinkedinFill } from "@remixicon/react";
+import { useEffect, useState } from "react";
+
+const items = ["Design Engineer", "Interface Designer", "Frontend Engineer", "Product Engineer"];
 
 export function HomeHero() {
+	const [index, setIndex] = useState(0);
+
+	useEffect(() => {
+		const id = setInterval(() => {
+			setIndex((prev) => (prev + 1) % items.length);
+		}, 2000);
+
+		return () => clearInterval(id);
+	}, []);
+
 	return (
 		<section className="mx-auto mt-[3.25rem] grid w-full max-w-[81rem] grid-cols-1 gap-y-5 px-6 md:mt-[6.5rem] md:grid-cols-3 md:gap-x-6 md:gap-y-10 xl:px-0">
 			<h1 className="col-span-3 flex flex-col gap-1 text-[clamp(2rem,calc(3vw+2vh),4rem)] font-semibold tracking-[-0.02em] text-balance text-gray-700 lg:col-span-2">
@@ -16,13 +29,28 @@ export function HomeHero() {
 				>
 					Hi, I&apos;m Chibuike
 				</motion.span>
-				<motion.span
+				<motion.div
+					className="overflow-hidden relative h-[1.2em]"
 					initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
 					animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
 					transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
 				>
-					Design Engineer
-				</motion.span>
+					<AnimatePresence mode="wait">
+						<motion.div
+							key={items[index]}
+							initial={{ y: -80, opacity: 0, filter: "blur(10px)" }}
+							animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
+							exit={{ y: 80, opacity: 0, filter: "blur(10px)" }}
+							transition={{
+								duration: 0.8,
+								ease: [0.22, 1, 0.36, 1],
+							}}
+							className="absolute inset-0 flex items-center"
+						>
+							{items[index]}
+						</motion.div>
+					</AnimatePresence>
+				</motion.div>
 			</h1>
 
 			<div className="col-span-3 flex flex-col gap-10 lg:col-span-1">

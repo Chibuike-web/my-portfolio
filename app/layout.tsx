@@ -47,8 +47,12 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en" className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-			<body>
+		<html
+			lang="en"
+			className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+			suppressHydrationWarning
+		>
+			<body suppressHydrationWarning>
 				<SmoothScrollProvider>{children}</SmoothScrollProvider>
 			</body>
 		</html>

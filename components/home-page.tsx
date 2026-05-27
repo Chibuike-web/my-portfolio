@@ -11,12 +11,17 @@ import { filter } from "@/lib/filter";
 import { useRouter } from "next/navigation";
 import { PageShell } from "./page-shell";
 import { Tabs } from "@base-ui/react/tabs";
+import { startTransition, useOptimistic } from "react";
 
 export function HomePage() {
 	const searchParams = useSearchParams();
 	const router = useRouter();
 	const category = searchParams.get("category") ?? "all";
-	const selectedCategory = category === "design" || category === "engineering" ? category : "all";
+	const [optimisticCategory, setOptimisticCategory] = useOptimistic(category);
+	const selectedCategory =
+		optimisticCategory === "design" || optimisticCategory === "engineering"
+			? optimisticCategory
+			: "all";
 	const filteredProjects =
 		selectedCategory === "all"
 			? projects
@@ -34,8 +39,11 @@ export function HomePage() {
 								key={categoryItem.id}
 								value={categoryItem.id}
 								onClick={() =>
-									router.push(categoryItem.id === "all" ? "/" : `/?category=${categoryItem.id}`, {
-										scroll: false,
+									startTransition(() => {
+										setOptimisticCategory(categoryItem.id);
+										router.push(categoryItem.id === "all" ? "/" : `/?category=${categoryItem.id}`, {
+											scroll: false,
+										});
 									})
 								}
 								className="px-3 py-1.5 data-[active]:text-white rounded-full text-sm focus:outline-0 focus-visible:ring-2 focus-visible:ring-gray-300 focus-visible:ring-offset-2"

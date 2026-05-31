@@ -4,7 +4,7 @@ import { sections } from "@/lib/data";
 import { useEffect, useState } from "react";
 
 export function ProgressBar() {
-	const [activeSection, setActiveSection] = useState(-1);
+	const [activeSectionIndex, setActiveSectionIndex] = useState(-1);
 
 	useEffect(() => {
 		const observer = new IntersectionObserver(
@@ -13,7 +13,7 @@ export function ProgressBar() {
 					if (entry.isIntersecting) {
 						const index = sections.findIndex((s) => s.id === entry.target.id);
 						if (index !== -1) {
-							setActiveSection(index);
+							setActiveSectionIndex(index);
 						}
 					}
 				});
@@ -30,7 +30,7 @@ export function ProgressBar() {
 
 		const handleScroll = () => {
 			if (window.scrollY < window.innerHeight * 0.5) {
-				setActiveSection(-1);
+				setActiveSectionIndex(-1);
 			}
 		};
 
@@ -39,7 +39,8 @@ export function ProgressBar() {
 		return () => observer.disconnect();
 	}, []);
 
-	const progress = activeSection === -1 ? 0 : ((activeSection + 1) / sections.length) * 100;
+	const progress =
+		activeSectionIndex === -1 ? 0 : ((activeSectionIndex + 1) / sections.length) * 100;
 	return (
 		<div className="fixed top-0 left-0 w-full h-1 z-50 bg-gray-200">
 			<div

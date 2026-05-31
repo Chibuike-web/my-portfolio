@@ -2,10 +2,9 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
 	logging: { fetches: { fullUrl: true } },
-	experimental: {
-		turbopackFileSystemCacheForBuild: true,
-		optimizePackageImports: ["@remixicon/react"],
-	},
+	cacheComponents: true,
+	reactCompiler: true,
+	experimental: { turbopackFileSystemCacheForBuild: true },
 	reactStrictMode: true,
 	typedRoutes: true,
 };

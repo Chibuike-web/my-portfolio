@@ -1,18 +1,11 @@
 @import "tailwindcss";
 
 :root {
-	--gray-100: hsl(210, 30%, 96%);
-	--gray-500: hsl(221, 8%, 48%);
-	--gray-700: hsl(220, 15%, 20%);
-}
-
-@theme {
-	--color-gray-100: var(--gray-100);
-	--color-gray-500: var(--gray-500);
-	--color-gray-700: var(--gray-700);
+	--background: #ffffff;
+	--foreground: #171717;
 }
 
 body {
-	color: var(--gray-700);
-	background: white;
+	background: var(--background);
+	color: var(--foreground);
 }

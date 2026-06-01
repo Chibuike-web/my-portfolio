@@ -1,19 +1,85 @@
 @import "tailwindcss";
 
 :root {
-	--background: #ffffff;
-	--foreground: #171717;
+	--gray: oklch(37.2% 0 0);
+	--gray-70: oklch(37.2% 0 0 / 70%);
+	--gray-15: oklch(37.2% 0 0 / 15%);
+	--gray-10: oklch(37.2% 0 0 / 10%);
+	--gray-05: oklch(37.2% 0 0 / 5%);
+	--white: oklch(100% 0 0);
+	--font-primary: var(--font-inter);
+	--font-secondary: var(--font-geist-mono);
+	--background: var(--white);
+	--foreground: var(--gray);
+}
+
+@theme {
+	--color-gray: var(--gray);
+	--color-gray-70: var(--gray-70);
+	--color-gray-15: var(--gray-15);
+	--color-gray-10: var(--gray-10);
+	--color-gray-05: var(--gray-05);
+	--color-white: var(--white);
+	--font-primary: var(--font-primary);
+	--font-secondary: var(--font-secondary);
 }
 
 body {
 	background: var(--background);
 	color: var(--foreground);
-	font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+	font-family: var(--font-primary), Arial, Helvetica, sans-serif;
+	min-width: 0;
+	font-size: 14px;
 }
 
 code,
 kbd,
 pre,
 samp {
-	font-family: var(--font-geist-mono), "Courier New", monospace;
+	font-family: var(--font-secondary), "Courier New", monospace;
+}
+
+@utility no-line-height {
+	text-box: trim-both cap alphabetic;
+}
+
+@utility tight {
+	letter-spacing: -0.02em;
+}
+
+@utility no-scrollbar {
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+
+	/* Hide scrollbar for Chrome, Safari and Opera */
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+/* Base Scrollbar */
+::-webkit-scrollbar {
+	width: 0.5rem;
+	height: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	background: rgba(0, 0, 0, 0.3);
+	border-radius: 6.25rem;
+	border: 0.125rem solid transparent;
+	background-clip: content-box;
+	transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: rgba(0, 0, 0, 0.2);
+	background-clip: content-box;
+}
+
+@utility link {
+	@apply font-medium underline underline-offset-1 text-gray;
 }

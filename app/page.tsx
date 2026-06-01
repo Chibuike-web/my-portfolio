@@ -1,7 +1,13 @@
+import { Footer } from "@/components/layouts/footer";
+import { Hero } from "@/components/layouts/hero";
+import { Navbar } from "@/components/layouts/navbar";
+
 export default function Home() {
 	return (
-		<main className="flex min-h-screen items-center justify-center p-8">
-			<h1 className="text-4xl font-bold">New Portfolio</h1>
+		<main className="w-full max-w-[782px] py-[88px] mx-auto px-4">
+			<Navbar />
+			<Hero />
+			<Footer />
 		</main>
 	);
 }

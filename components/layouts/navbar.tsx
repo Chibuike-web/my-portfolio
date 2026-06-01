@@ -1,21 +1,19 @@
 import { LogoIcon } from "@/icons/logo-icon";
-import { Sun } from "lucide-react";
+import ThemeButton from "../theme-button";
 
 export function Navbar() {
 	return (
 		<div className="flex items-center justify-between">
-			<div className="flex items-center gap-[10px]">
-				<div className="bg-gray-05 size-[48px] rounded-full flex items-center justify-center shrink-0">
+			<div className="flex items-center gap-2.5">
+				<div className="flex size-12 shrink-0 items-center justify-center rounded-full bg-surface-muted">
 					<LogoIcon />
 				</div>
-				<div className="flex flex-col gap-[10px] font-medium">
-					<p className="text-gray no-line-height tight">Chibuike Maduabuchi</p>
-					<p className="text-gray-70 no-line-height tight">Design Engineer</p>
+				<div className="flex flex-col gap-2.5 font-medium">
+					<p className="no-line-height tight text-foreground">Chibuike Maduabuchi</p>
+					<p className="no-line-height tight text-muted-foreground">Design Engineer</p>
 				</div>
 			</div>
-			<div className="p-[6px] hover:bg-gray-05 rounded-full">
-				<Sun className="text-gray size-5" />
-			</div>
+			<ThemeButton />
 		</div>
 	);
 }

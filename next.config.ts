@@ -4,7 +4,10 @@ const nextConfig: NextConfig = {
 	logging: { fetches: { fullUrl: true } },
 	cacheComponents: true,
 	reactCompiler: true,
-	experimental: { turbopackFileSystemCacheForBuild: true },
+	experimental: {
+		optimizePackageImports: ["lucide-react"],
+		turbopackFileSystemCacheForBuild: true,
+	},
 	reactStrictMode: true,
 	typedRoutes: true,
 };

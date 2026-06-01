@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Footer } from "@/components/layouts/footer";
 import { Hero } from "@/components/layouts/hero";
 import { Navbar } from "@/components/layouts/navbar";
+import { Projects } from "@/components/layouts/projects";
 
 export const metadata: Metadata = {
 	title: "Chibuike Maduabuchi | Design Engineer",
@@ -23,9 +24,10 @@ export const metadata: Metadata = {
 
 export default function Home() {
 	return (
-		<main className="w-full max-w-[782px] py-[88px] mx-auto px-4">
+		<main className="mx-auto w-full max-w-[48.875rem] px-4 py-22">
 			<Navbar />
 			<Hero />
+			<Projects />
 			<Footer />
 		</main>
 	);

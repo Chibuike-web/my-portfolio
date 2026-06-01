@@ -1,25 +1,26 @@
 @import "tailwindcss";
 
 :root {
-	--gray: oklch(37.2% 0 0);
-	--gray-70: oklch(37.2% 0 0 / 70%);
-	--gray-15: oklch(37.2% 0 0 / 15%);
-	--gray-10: oklch(37.2% 0 0 / 10%);
-	--gray-05: oklch(37.2% 0 0 / 5%);
-	--white: oklch(100% 0 0);
+	--background: oklch(100% 0 0);
+	--foreground: oklch(37.2% 0 0);
+	--muted-foreground: oklch(37.2% 0 0 / 70%);
+	--border: oklch(37.2% 0 0 / 15%);
+	--ring: oklch(37.2% 0 0 / 15%);
+	--surface-hover: oklch(37.2% 0 0 / 10%);
+	--surface-muted: oklch(37.2% 0 0 / 5%);
 	--font-primary: var(--font-inter);
 	--font-secondary: var(--font-geist-mono);
-	--background: var(--white);
-	--foreground: var(--gray);
 }
 
 @theme {
-	--color-gray: var(--gray);
-	--color-gray-70: var(--gray-70);
-	--color-gray-15: var(--gray-15);
-	--color-gray-10: var(--gray-10);
-	--color-gray-05: var(--gray-05);
-	--color-white: var(--white);
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--color-muted-foreground: var(--muted-foreground);
+	--color-border: var(--border);
+	--color-ring: var(--ring);
+	--color-surface: var(--surface);
+	--color-surface-hover: var(--surface-hover);
+	--color-surface-muted: var(--surface-muted);
 	--font-primary: var(--font-primary);
 	--font-secondary: var(--font-secondary);
 }
@@ -29,14 +30,8 @@ body {
 	color: var(--foreground);
 	font-family: var(--font-primary), Arial, Helvetica, sans-serif;
 	min-width: 0;
-	font-size: 14px;
-}
-
-code,
-kbd,
-pre,
-samp {
-	font-family: var(--font-secondary), "Courier New", monospace;
+	font-size: 0.875rem;
+	line-height: 1.2;
 }
 
 @utility no-line-height {
@@ -81,5 +76,5 @@ samp {
 }
 
 @utility link {
-	@apply font-medium underline underline-offset-1 text-gray;
+	@apply font-medium underline underline-offset-1 text-foreground;
 }

@@ -7,10 +7,10 @@ import { ReactNode } from "react";
 export function Hero() {
 	return (
 		<div>
-			<div className="pt-8 pb-10 text-gray-70 tight font-medium flex flex-col gap-2">
+			<div className="tight flex flex-col gap-2 pt-8 pb-10 font-medium text-muted-foreground text-pretty">
 				<p>
-					I’m a <span className="text-gray">design engineer</span> based in Nigeria. I design and
-					build digital products with a strong focus on structure, usability, and craft.
+					I’m a <span className="text-foreground">design engineer</span> based in Nigeria. I design
+					and build digital products with a strong focus on structure, usability, and craft.
 				</p>
 				<p>
 					For the past year and a half, I’ve been building products independently, working across
@@ -21,7 +21,7 @@ export function Hero() {
 					Recently, I’ve been building{" "}
 					<Link
 						href="/medibridge"
-						className="link focus-visible:outline-0 border border-transparent focus-visible:border-gray-70 rounded-[4px]"
+						className="link rounded border border-transparent focus-visible:border-muted-foreground focus-visible:outline-none"
 					>
 						MediBridge
 					</Link>
@@ -33,7 +33,7 @@ export function Hero() {
 					products.
 				</p>
 			</div>
-			<div className="flex gap-3">
+			<div className="flex flex-wrap gap-x-3 gap-y-2">
 				<HeroButton link="mailto:chibuikemaduabuchi2023@gmail.com">
 					<EmailIcon /> <span className="font-semibold">Mail</span>
 				</HeroButton>
@@ -54,7 +54,7 @@ function HeroButton({ link, children }: { link: string; children: ReactNode }) {
 			href={link}
 			target="_blank"
 			rel="noopener noreferrer"
-			className="px-4 py-2 bg-gray-05 rounded-full text-gray flex items-center gap-2 border border-transparent hover:bg-gray-10 focus-visible:outline-none focus-visible:border-gray-70 focus-visible:ring-3 focus-visible:ring-gray-15"
+			className="flex min-h-10 items-center gap-2 rounded-full border border-transparent bg-surface-muted px-4 py-1.5 text-foreground transition-[background-color,scale] duration-150 ease-out hover:bg-surface-hover active:scale-96 focus-visible:border-muted-foreground focus-visible:ring-3 focus-visible:ring-ring focus-visible:outline-none"
 		>
 			{children}
 		</a>

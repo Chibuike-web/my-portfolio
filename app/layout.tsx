@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist_Mono, Inter } from "next/font/google";
+import { SmoothScrollProvider } from "@/components/smooth-scroll-provider";
 import "./globals.css";
 
 const inter = Inter({
@@ -13,8 +14,30 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-	title: "New Portfolio",
-	description: "A new portfolio built with Next.js",
+	metadataBase: new URL("https://chibuike-maduabuchi.vercel.app"),
+	title: {
+		default: "Chibuike Maduabuchi",
+		template: "%s | Chibuike Maduabuchi",
+	},
+	description:
+		"Portfolio of Chibuike Maduabuchi, a design engineer blending design and code to build thoughtful digital products.",
+	icons: {
+		icon: "/profile.svg",
+	},
+	openGraph: {
+		title: "Chibuike Maduabuchi | Design Engineer",
+		description: "AI systems, design engineering, and product-focused frontend work.",
+		url: "https://chibuike-maduabuchi.vercel.app",
+		siteName: "Chibuike Maduabuchi",
+		images: [{ url: "/og-image.png", width: 1200, height: 630 }],
+		type: "website",
+	},
+	twitter: {
+		card: "summary_large_image",
+		title: "Chibuike Maduabuchi | Design Engineer",
+		description: "AI systems, design engineering, and product-focused frontend work.",
+		images: ["/og-image.png"],
+	},
 };
 
 export default function RootLayout({
@@ -28,7 +51,9 @@ export default function RootLayout({
 			className={`${inter.variable} ${geistMono.variable} antialiased`}
 			suppressHydrationWarning
 		>
-			<body>{children}</body>
+			<body>
+				<SmoothScrollProvider>{children}</SmoothScrollProvider>
+			</body>
 		</html>
 	);
 }

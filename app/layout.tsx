@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Geist_Mono, Inter } from "next/font/google";
-import { SmoothScrollProvider } from "@/components/smooth-scroll-provider";
 import "./globals.css";
 
 const inter = Inter({
@@ -52,7 +51,7 @@ export default function RootLayout({
 			suppressHydrationWarning
 		>
 			<body>
-				<SmoothScrollProvider>{children}</SmoothScrollProvider>
+				{children}
 			</body>
 		</html>
 	);

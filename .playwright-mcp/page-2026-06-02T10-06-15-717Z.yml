@@ -1,0 +1,58 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - img [ref=e6]
+        - generic [ref=e12]:
+          - paragraph [ref=e13]: Chibuike Maduabuchi
+          - paragraph [ref=e14]: Design Engineer
+      - button [ref=e15] [cursor=pointer]:
+        - img [ref=e16]
+    - generic [ref=e22]:
+      - generic [ref=e23]:
+        - paragraph [ref=e24]: I’m a design engineer based in Nigeria. I design and build digital products with a strong focus on structure, usability, and craft.
+        - paragraph [ref=e25]: For the past year and a half, I’ve been building products independently, working across product thinking, interface design, and frontend engineering. I care about systems that feel clear, fast, and intuitive to use.
+        - paragraph [ref=e26]:
+          - text: Recently, I’ve been building
+          - link "MediBridge" [ref=e27] [cursor=pointer]:
+            - /url: /medibridge
+          - text: ", a platform for managing and transferring patient records between hospitals. I designed the workflows, structured the system, and built the frontend from the ground up."
+        - paragraph [ref=e28]: I’m currently looking for opportunities to work with thoughtful teams building ambitious products.
+      - generic [ref=e29]:
+        - link "Mail" [ref=e30] [cursor=pointer]:
+          - /url: mailto:chibuikemaduabuchi2023@gmail.com
+          - img [ref=e31]
+          - generic [ref=e34]: Mail
+        - link "Github" [ref=e35] [cursor=pointer]:
+          - /url: https://github.com/Chibuike-web
+          - img [ref=e36]
+          - generic [ref=e39]: Github
+        - link "Linkedin" [ref=e40] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/chibuike-maduabuchi/
+          - img [ref=e41]
+          - generic [ref=e43]: Linkedin
+    - generic [ref=e44]:
+      - heading "Projects" [level=1] [ref=e45]
+      - generic [ref=e46]:
+        - link "Nomba project preview Nomba Bulk Airtime Transfer" [ref=e47] [cursor=pointer]:
+          - /url: /nomba
+          - generic [ref=e48]:
+            - img "Nomba project preview" [ref=e49]
+            - generic [ref=e50]:
+              - paragraph [ref=e51]: Nomba
+              - paragraph [ref=e52]: Bulk Airtime Transfer
+        - link "Medibridge project preview Medibridge AI-Powered healthcare management system" [ref=e53] [cursor=pointer]:
+          - /url: /medibridge
+          - generic [ref=e54]:
+            - img "Medibridge project preview" [ref=e55]
+            - generic [ref=e56]:
+              - paragraph [ref=e57]: Medibridge
+              - paragraph [ref=e58]: AI-Powered healthcare management system
+    - generic [ref=e59]:
+      - paragraph [ref=e60]: Designed and Developed by Chibuike ©2026
+      - button "Copy email address" [ref=e61] [cursor=pointer]:
+        - text: chibuikemaduabuchi2023@gmail.com
+        - img [ref=e62]
+        - img [ref=e65]
+  - button "Open Next.js Dev Tools" [ref=e72] [cursor=pointer]:
+    - img [ref=e73]

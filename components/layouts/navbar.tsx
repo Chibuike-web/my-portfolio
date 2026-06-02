@@ -1,5 +1,5 @@
 import { LogoIcon } from "@/icons/logo-icon";
-import ThemeButton from "../theme-button";
+import { ThemeButton } from "../theme-button";
 
 export function Navbar() {
 	return (

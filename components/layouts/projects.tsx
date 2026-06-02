@@ -1,18 +1,20 @@
 import Image from "next/image";
 import Link from "next/link";
+import medibridgeThumbnail from "../../assets/thumbnails/light/medibridge-thumbnail.webp";
+import nombaThumbnail from "../../assets/thumbnails/light/nomba-thumbnail.webp";
 
 const projects = [
 	{
 		href: "/nomba",
 		name: "Nomba",
 		description: "Bulk Airtime Transfer",
-		image: "/nomba-thumbnail.png",
+		image: nombaThumbnail,
 	},
 	{
 		href: "/medibridge",
 		name: "Medibridge",
 		description: "AI-Powered healthcare management system",
-		image: "/medibridge-thumbnail.png",
+		image: medibridgeThumbnail,
 	},
 ] as const;
 
@@ -27,15 +29,16 @@ export function Projects() {
 						href={project.href}
 						className="relative w-full overflow-hidden rounded-[24px] border border-border bg-surface-muted p-[6px] transition-opacity duration-150 ease-out group-hover/projects:opacity-35 hover:!opacity-100 focus-visible:!opacity-100 md:max-w-[367px]"
 					>
-						<div className="relative w-full overflow-hidden rounded-[18px] aspect-[367/350]">
+						<div className="relative w-full overflow-hidden rounded-[18px] aspect-[367/350] bg-white">
 							<Image
 								src={project.image}
 								alt={`${project.name} project preview`}
 								fill
 								sizes="(max-width: 767px) 100vw, 367px"
 								className="w-full"
+								loading="eager"
 							/>
-							<div className="relative z-10 flex h-full w-full flex-col bg-gradient-to-t from-white/90 from-0% via-white/35 via-18% to-transparent to-58% p-4">
+							<div className="project-thumbnail-overlay relative z-10 flex h-full w-full flex-col p-4">
 								<p className="mt-auto text-[1rem] font-medium text-foreground">{project.name}</p>
 								<p className="font-medium text-muted-foreground">{project.description}</p>
 							</div>

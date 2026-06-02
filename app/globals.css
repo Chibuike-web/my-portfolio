@@ -8,6 +8,19 @@
 	--ring: oklch(37.2% 0 0 / 15%);
 	--surface-hover: oklch(37.2% 0 0 / 10%);
 	--surface-muted: oklch(37.2% 0 0 / 5%);
+
+	--blue: oklch(49% 0.21 264);
+	--blue-muted: oklch(49% 0.21 264 / 30%);
+
+	--amber: oklch(60% 0.16 55);
+	--amber-muted: oklch(60% 0.16 55 / 30%);
+
+	--red: oklch(57% 0.2 38);
+	--red-muted: oklch(57% 0.2 38 / 30%);
+
+	--green: oklch(55% 0.14 145);
+	--green-muted: oklch(55% 0.14 145 / 30%);
+
 	--font-primary: var(--font-inter);
 	--font-secondary: var(--font-geist-mono);
 }
@@ -21,6 +34,19 @@
 	--color-surface: var(--surface);
 	--color-surface-hover: var(--surface-hover);
 	--color-surface-muted: var(--surface-muted);
+
+	--color-blue: var(--blue);
+	--color-blue-muted: var(--blue-muted);
+
+	--color-amber: var(--amber);
+	--color-amber-muted: var(--amber-muted);
+
+	--color-red: var(--red);
+	--color-red-muted: var(--red-muted);
+
+	--color-green: var(--green);
+	--color-green-muted: var(--green-muted);
+
 	--font-primary: var(--font-primary);
 	--font-secondary: var(--font-secondary);
 }
@@ -32,6 +58,21 @@ body {
 	min-width: 0;
 	font-size: 0.875rem;
 	line-height: 1.2;
+}
+
+.project-thumbnail-overlay {
+	background: linear-gradient(
+		to top,
+		rgba(255, 255, 255, 1) 0%,
+		rgba(255, 255, 255, 0.93) 12%,
+		rgba(255, 255, 255, 0.85) 21%,
+		rgba(255, 255, 255, 0.76) 29%,
+		rgba(255, 255, 255, 0.67) 35%,
+		rgba(255, 255, 255, 0.59) 40%,
+		rgba(255, 255, 255, 0.5) 45%,
+		rgba(255, 255, 255, 0.41) 48%,
+		rgba(255, 255, 255, 0) 58%
+	);
 }
 
 @utility no-line-height {

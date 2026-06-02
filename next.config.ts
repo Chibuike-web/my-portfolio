@@ -2,8 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
 	logging: { fetches: { fullUrl: true } },
-	cacheComponents: true,
-	reactCompiler: true,
+	reactCompiler: false,
 	experimental: {
 		optimizePackageImports: ["lucide-react", "@base-ui/react"],
 		turbopackFileSystemCacheForBuild: true,

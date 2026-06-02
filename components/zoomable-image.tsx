@@ -11,11 +11,11 @@ type ZoomableImageProps = {
 	alt: string;
 	width: number;
 	height: number;
+	className?: string;
 };
 
-export function ZoomableImage({ src, alt, width, height }: ZoomableImageProps) {
+export function ZoomableImage({ src, alt, width, height, className }: ZoomableImageProps) {
 	const [isZoomed, setIsZoomed] = useState(false);
-
 	const layoutId = `zoom-image-${src.src}`;
 
 	const handleOpen = () => {
@@ -31,65 +31,54 @@ export function ZoomableImage({ src, alt, width, height }: ZoomableImageProps) {
 	};
 
 	return (
-		<div className="relative">
-			<motion.button
-				type="button"
-				onClick={handleOpen}
-				className="block w-full cursor-zoom-in"
-				aria-label="Open image preview"
-			>
-				<motion.div
-					layoutId={layoutId}
-					transition={{ type: "spring", duration: 0.2, bounce: 0 }}
-					className={cn(
-						"flex overflow-hidden rounded-[1rem] bg-surface-muted ring ring-surface-hover",
-						isZoomed && "opacity-0",
-					)}
-				>
-					<Image
-						src={src}
-						alt={alt}
-						width={width}
-						height={height}
-						loading="lazy"
-						className="h-auto w-full"
-					/>
-				</motion.div>
-			</motion.button>
-
+		<>
+			{/* Thumbnail state */}
 			<motion.div
+				layoutId={layoutId}
+				onClick={handleOpen}
 				className={cn(
-					"fixed inset-0 z-50 flex items-center justify-center bg-white/90 backdrop-blur-md",
-					isZoomed ? "pointer-events-auto" : "pointer-events-none",
+					"w-full cursor-zoom-in overflow-hidden rounded-xl bg-black/10 ring ring-surface-hover",
+					isZoomed && "pointer-events-none opacity-0",
+					className,
 				)}
-				onClick={handleClose}
-				animate={{ opacity: isZoomed ? 1 : 0 }}
-				initial={false}
-				transition={{ duration: 0.2 }}
-				aria-hidden={!isZoomed}
+				transition={{ type: "spring", duration: 0.2, bounce: 0 }}
 			>
-				<button
-					type="button"
-					className="absolute right-4 top-4 z-10 text-foreground"
-					onClick={handleClose}
-					aria-label="Close image preview"
-					tabIndex={isZoomed ? 0 : -1}
-				>
-					<X className="size-5" />
-				</button>
+				<Image
+					src={src}
+					alt={alt}
+					width={width}
+					height={height}
+					loading="lazy"
+					placeholder="blur"
+					className="h-auto w-full"
+				/>
+			</motion.div>
 
-				<button
-					type="button"
-					className="flex w-full cursor-zoom-out items-center justify-center px-6"
-					onClick={handleClose}
-					tabIndex={isZoomed ? 0 : -1}
-				>
-					<AnimatePresence>
-						{isZoomed && (
+			<AnimatePresence>
+				{isZoomed && (
+					<>
+						{/* Backdrop */}
+						<motion.div
+							className="fixed inset-0 z-40 bg-white/90 backdrop-blur-md"
+							initial={{ opacity: 0 }}
+							animate={{ opacity: 1 }}
+							exit={{ opacity: 0 }}
+							transition={{ duration: 0.2 }}
+							onClick={handleClose}
+						/>
+
+						{/* Expanded state */}
+						<motion.div
+							className="fixed inset-0 z-50 flex cursor-zoom-out items-center justify-center px-6 lg:px-0"
+							onClick={handleClose}
+							initial={{ opacity: 1 }}
+							animate={{ opacity: 1 }}
+							exit={{ opacity: 1 }}
+						>
 							<motion.div
 								layoutId={layoutId}
+								className="w-full select-none overflow-hidden rounded-xl bg-black/10 ring ring-black/10 lg:max-w-[75vw] 2xl:max-w-[1200px]"
 								transition={{ type: "spring", duration: 0.2, bounce: 0 }}
-								className="flex max-w-[1000px] overflow-hidden rounded-[1rem] bg-surface-muted ring ring-surface-hover"
 							>
 								<Image
 									src={src}
@@ -97,13 +86,23 @@ export function ZoomableImage({ src, alt, width, height }: ZoomableImageProps) {
 									width={width}
 									height={height}
 									loading="lazy"
+									placeholder="blur"
 									className="h-auto w-full"
 								/>
 							</motion.div>
-						)}
-					</AnimatePresence>
-				</button>
-			</motion.div>
-		</div>
+
+							<button
+								type="button"
+								className="absolute right-4 top-4 z-10 text-foreground"
+								onClick={handleClose}
+								aria-label="Close image preview"
+							>
+								<X className="size-5" />
+							</button>
+						</motion.div>
+					</>
+				)}
+			</AnimatePresence>
+		</>
 	);
 }

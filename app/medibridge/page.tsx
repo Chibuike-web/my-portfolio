@@ -4,21 +4,66 @@ import { ZoomableImage } from "@/components/zoomable-image";
 import { cn } from "@/lib/utils";
 import { ArrowLeft, ArrowUpLeft } from "lucide-react";
 import Link from "next/link";
-import first from "@/assets/medibridge/first.webp";
-import second from "@/assets/medibridge/second.webp";
-import third from "@/assets/medibridge/third.webp";
-import fourth from "@/assets/medibridge/fourth.webp";
-import fifth from "@/assets/medibridge/fifth.webp";
-import sixth from "@/assets/medibridge/sixth.webp";
-import seventh from "@/assets/medibridge/seventh.webp";
-import eighth from "@/assets/medibridge/eighth.webp";
-import ninth from "@/assets/medibridge/ninth.webp";
-import tenth from "@/assets/medibridge/tenth.webp";
-import eleventh from "@/assets/medibridge/eleventh.webp";
-import twelfth from "@/assets/medibridge/twelfth.webp";
+import patientOnboardingFirst from "@/assets/medibridge/patient-onboarding-first.webp";
+import patientOnboardingSecond from "@/assets/medibridge/patient-onboarding-second.webp";
+import patientOnboardingThird from "@/assets/medibridge/patient-onboarding-third.webp";
+import patientOnboardingFourth from "@/assets/medibridge/patient-onboarding-fourth.webp";
+import patientOnboardingFifth from "@/assets/medibridge/patient-onboarding-fifth.webp";
+import patientOnboardingSixth from "@/assets/medibridge/patient-onboarding-sixth.webp";
+import patientOnboardingSeventh from "@/assets/medibridge/patient-onboarding-seventh.webp";
+import patientManagementFirst from "@/assets/medibridge/patient-management-first.webp";
+import patientManagementSecond from "@/assets/medibridge/patient-management-second.webp";
+import patientManagementThird from "@/assets/medibridge/patient-management-third.webp";
+import patientManagementFourth from "@/assets/medibridge/patient-management-fourth.webp";
+import patientManagementFifth from "@/assets/medibridge/patient-management-fifth.webp";
+import patientManagementSixth from "@/assets/medibridge/patient-management-sixth.webp";
+import patientManagementSeventh from "@/assets/medibridge/patient-management-seventh.webp";
+import patientManagementEighth from "@/assets/medibridge/patient-management-eighth.webp";
+import patientManagementNinth from "@/assets/medibridge/patient-management-ninth.webp";
+import patientManagementTenth from "@/assets/medibridge/patient-management-tenth.webp";
+import patientManagementEleventh from "@/assets/medibridge/patient-management-eleventh.webp";
+import patientManagementTwelfth from "@/assets/medibridge/patient-management-twelfth.webp";
+import patientManagementThirteenth from "@/assets/medibridge/patient-management-thirteenth.webp";
+import patientTransferFirst from "@/assets/medibridge/patient-transfers-first.webp";
+import patientTransferSecond from "@/assets/medibridge/patient-transfers-second.webp";
+import patientTransferThird from "@/assets/medibridge/patient-transfers-third.webp";
+import patientTransferFourth from "@/assets/medibridge/patient-transfers-fourth.webp";
+import patientTransferFifth from "@/assets/medibridge/patient-transfers-fifth.webp";
+import patientTransferSixth from "@/assets/medibridge/patient-transfers-sixth.webp";
+import patientTransferSeventh from "@/assets/medibridge/patient-transfers-seventh.webp";
 
 const headingClass = "text-lg font-medium tight text-balance";
 const bodyClass = "font-medium leading-[1.4] tight text-muted-foreground text-pretty";
+const patientOnboardingGridImages = [
+	patientOnboardingSecond,
+	patientOnboardingThird,
+	patientOnboardingFourth,
+	patientOnboardingFifth,
+	patientOnboardingSixth,
+	patientOnboardingSeventh,
+];
+const patientManagementGridImages = [
+	patientManagementSecond,
+	patientManagementThird,
+	patientManagementFourth,
+	patientManagementFifth,
+	patientManagementSixth,
+	patientManagementSeventh,
+	patientManagementEighth,
+	patientManagementNinth,
+	patientManagementTenth,
+	patientManagementEleventh,
+	patientManagementTwelfth,
+	patientManagementThirteenth,
+];
+const patientTransferGridImages = [
+	patientTransferSecond,
+	patientTransferThird,
+	patientTransferFourth,
+	patientTransferFifth,
+	patientTransferSixth,
+	patientTransferSeventh,
+];
 
 export default function MedibridgePage() {
 	return (
@@ -155,49 +200,18 @@ export default function MedibridgePage() {
 					formats and guides staff through reviewing extracted information before saving it into the
 					patient profile.
 				</p>
-				<ZoomableImage
-					src={first}
-					width={3000}
-					height={1800}
-					alt="Transaction summary and details screen for completed airtime transfers."
-				/>
+				<ZoomableImage src={patientOnboardingFirst} width={3000} height={1800} alt="" />
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-					<ZoomableImage
-						src={second}
-						width={3000}
-						height={1800}
-						alt="Transaction summary and details screen for completed airtime transfers."
-					/>
-					<ZoomableImage
-						src={third}
-						width={3000}
-						height={1800}
-						alt="Transaction summary and details screen for completed airtime transfers."
-					/>
-					<ZoomableImage
-						src={fourth}
-						width={3000}
-						height={1800}
-						alt="Transaction summary and details screen for completed airtime transfers."
-					/>
-					<ZoomableImage
-						src={fifth}
-						width={3000}
-						height={1800}
-						alt="Transaction summary and details screen for completed airtime transfers."
-					/>
-					<ZoomableImage
-						src={sixth}
-						width={3000}
-						height={1800}
-						alt="Transaction summary and details screen for completed airtime transfers."
-					/>
-					<ZoomableImage
-						src={seventh}
-						width={3000}
-						height={1800}
-						alt="Transaction summary and details screen for completed airtime transfers."
-					/>
+					{patientOnboardingGridImages.map((image, index) => (
+						<ZoomableImage
+							key={`patient-onboarding-grid-${index + 1}`}
+							src={image}
+							width={3000}
+							height={1800}
+							alt=""
+							className="md:rounded-[8px]"
+						/>
+					))}
 				</div>
 
 				<div className="mt-6 text-muted-foreground font-medium text-pretty flex flex-col gap-2 leading-[1.3]">
@@ -235,7 +249,7 @@ export default function MedibridgePage() {
 			</section>
 			<section id="patient-management" className="mt-22">
 				<h2 className={cn(headingClass, "mb-3")}>Patient Management</h2>
-				<div className="mt-3 text-muted-foreground font-medium text-pretty flex flex-col gap-2 leading-[1.3]">
+				<div className="mt-3 text-muted-foreground font-medium text-pretty flex flex-col gap-2 leading-[1.3] mb-6">
 					<p>
 						After onboarding patients into the system, I designed the day-to-day experience of
 						managing patient records inside the hospital workflow. Medical information changes
@@ -263,46 +277,51 @@ export default function MedibridgePage() {
 						and carried across different stages of patient care.
 					</p>
 				</div>
-				{/* <ZoomableImage
-									src={fifth}
-									width={3000}
-									height={1800}
-									alt="Transaction summary and details screen for completed airtime transfers."
-								/> */}
-				<div className="mt-3 text-muted-foreground font-medium text-pretty flex flex-col gap-2 leading-[1.3]">
+				<ZoomableImage src={patientManagementFirst} width={3000} height={1800} alt="" />
+				<div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+					{patientManagementGridImages.map((image, index) => (
+						<ZoomableImage
+							key={`patient-management-grid-${index + 1}`}
+							src={image}
+							width={3000}
+							height={1800}
+							alt=""
+							className="md:rounded-[8px]"
+						/>
+					))}
+				</div>
+				<div className="mt-6 text-muted-foreground font-medium text-pretty flex flex-col gap-2 leading-[1.3]">
 					<p>
-						Managing patient information in MediBridge goes beyond simply storing uploaded medical
-						documents. I designed the record system around structured, editable healthcare data that
-						can evolve over time as a patient’s condition, treatment, and history change. Instead of
-						forcing healthcare staff to repeatedly search through long PDFs, scanned forms, or
-						fragmented notes, patient information is organized into clear sections such as
-						medications, allergies, diagnoses, procedures, immunizations, laboratory results, and
-						medical history. This section-based structure makes records easier to scan, review, and
-						update during fast-paced clinical workflows where speed and clarity directly affect
-						decision-making.
+						Managing patient information in MediBridge goes beyond storing uploaded medical
+						documents. The record system is built around editable healthcare data that can grow and
+						change as a patient’s condition, treatment, and medical history evolve. Instead of
+						making healthcare staff dig through long PDFs, scanned forms, or scattered notes,
+						information is organized into sections like medications, allergies, diagnoses,
+						procedures, immunizations, laboratory results, and medical history. This makes records
+						easier to scan, review, and update during busy clinical workflows where quick access to
+						information matters.
 					</p>
 					<p>
-						The system also supports continuous record management directly from the patient profile.
-						Since healthcare data changes frequently, staff can add, edit, or update medical
-						information without replacing entire documents or creating duplicate records. New
-						medications can be prescribed, allergies updated, diagnoses reviewed, and procedures
-						recorded as care continues. This approach helps maintain a living patient record rather
-						than a static archive of files.
+						The system also supports ongoing record management directly from the patient profile.
+						Since healthcare information changes regularly, staff can add, edit, or update details
+						without replacing entire documents or creating duplicate records. New medications can be
+						prescribed, allergies updated, diagnoses reviewed, and procedures recorded as treatment
+						continues. This helps keep patient records current instead of turning them into a
+						collection of outdated files.
 					</p>
 					<p>
-						While MediBridge still supports uploaded documents and attachments, extracted and
-						manually entered information becomes part of a structured record layer that is easier to
-						manage, transfer, and review across hospitals. This creates a more interoperable and
-						scalable system compared to relying entirely on paper records or standalone uploaded
-						files that are difficult to search and maintain over time.
+						While MediBridge still supports document uploads and attachments, extracted and manually
+						entered information becomes part of a central patient record that is easier to manage,
+						review, and share across hospitals. This creates a more connected and scalable approach
+						than relying solely on paper records or uploaded files that become difficult to search
+						and maintain over time.
 					</p>
 					<p>
-						To improve accountability and traceability, every update made to a patient record is
-						logged within a dedicated history and activity tracking system. Healthcare staff can
-						review what information was changed, when it was updated, and how the patient record
-						evolved over time. Maintaining this audit trail helps support collaboration across
-						facilities, reduces confusion around record modifications, and creates a clearer
-						longitudinal view of patient care throughout the transfer and treatment process.
+						To improve accountability, every change made to a patient record is captured in a
+						dedicated activity log. Healthcare staff can see what information was updated, when the
+						change was made, and how the record has changed over time. This provides better
+						visibility across facilities, reduces confusion around record updates, and helps create
+						a clearer picture of a patient's care journey.
 					</p>
 				</div>
 				<div className="my-6 rounded-xl bg-surface-muted p-4">
@@ -328,7 +347,7 @@ export default function MedibridgePage() {
 					</p>
 				</div>
 
-				<div className="mt-3 text-muted-foreground font-medium text-pretty flex flex-col gap-2 leading-[1.3]">
+				<div className="mt-3 text-muted-foreground font-medium text-pretty flex flex-col gap-2 leading-[1.3] mb-6">
 					<p>
 						Transfers begin from an existing patient profile to ensure records are already verified
 						and organized before being shared with another hospital. During the transfer flow,
@@ -343,13 +362,20 @@ export default function MedibridgePage() {
 						containing the patient’s records and securely sends it to the destination hospital.
 					</p>
 				</div>
-				{/* <ZoomableImage
-									src={fifth}
-									width={3000}
-									height={1800}
-									alt="Transaction summary and details screen for completed airtime transfers."
-								/> */}
-				<div className="mt-3 text-muted-foreground font-medium text-pretty flex flex-col gap-2 leading-[1.3]">
+				<ZoomableImage src={patientTransferFirst} width={3000} height={1800} alt="" />
+				<div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+					{patientTransferGridImages.map((image, index) => (
+						<ZoomableImage
+							key={`patient-transfer-grid-${index + 1}`}
+							src={image}
+							width={3000}
+							height={1800}
+							alt=""
+							className="md:rounded-[8px]"
+						/>
+					))}
+				</div>
+				<div className="text-muted-foreground font-medium text-pretty flex flex-col gap-2 leading-[1.3] mt-6">
 					<p>
 						Transfers begin from an existing patient profile to ensure records are already verified
 						and organized before being shared with another hospital. During the transfer flow,

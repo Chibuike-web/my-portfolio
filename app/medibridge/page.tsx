@@ -31,6 +31,7 @@ import patientTransferFourth from "@/assets/medibridge/patient-transfers-fourth.
 import patientTransferFifth from "@/assets/medibridge/patient-transfers-fifth.webp";
 import patientTransferSixth from "@/assets/medibridge/patient-transfers-sixth.webp";
 import patientTransferSeventh from "@/assets/medibridge/patient-transfers-seventh.webp";
+import ProgressBar from "@/components/progress-bar";
 
 const headingClass = "text-lg font-medium tight text-balance";
 const bodyClass = "font-medium leading-[1.4] tight text-muted-foreground text-pretty";
@@ -80,14 +81,14 @@ export default function MedibridgePage() {
 				<ThemeButton />
 			</nav>
 			<div className="my-22">
-				<div className="flex items-center justify-between">
+				<div className="flex flex-wrap gap-y-6 items-center justify-between">
 					<div className="flex flex-col gap-3">
 						<h1 className="text-[18px] font-semibold tight">Medibridge</h1>
 						<div className="flex items-center gap-1.5">
 							<p className="font-medium text-[1rem] text-muted-foreground tight no-line-height">
 								AI-powered healthcare management system
 							</p>
-							<span className="size-0.5 bg-muted-foreground rounded-full" />
+							<span className="size-0.5 bg-muted-foreground rounded-full shrink-0" />
 							<p className="font-medium text-[1rem] text-muted-foreground tight no-line-height">
 								2025
 							</p>
@@ -418,6 +419,7 @@ export default function MedibridgePage() {
 					<p className="text-foreground font-medium no-line-height">Nomba</p>
 				</div>
 			</Link>
+			<ProgressBar />
 		</main>
 	);
 }

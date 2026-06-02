@@ -29,7 +29,7 @@ export function Projects() {
 						href={project.href}
 						className="relative w-full overflow-hidden rounded-[24px] border border-border bg-surface-muted p-[6px] transition-all duration-200 ease-out group-hover/projects:opacity-35 hover:!opacity-100 focus-visible:!opacity-100 md:max-w-[367px] hover:scale-[1.02]"
 					>
-						<div className="relative w-full overflow-hidden rounded-[18px] aspect-[367/350] bg-white">
+						<div className="relative aspect-[367/350] w-full overflow-hidden rounded-[18px] bg-background">
 							<Image
 								src={project.image}
 								alt={`${project.name} project preview`}

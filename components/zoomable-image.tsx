@@ -37,7 +37,7 @@ export function ZoomableImage({ src, alt, width, height, className }: ZoomableIm
 				layoutId={layoutId}
 				onClick={handleOpen}
 				className={cn(
-					"w-full cursor-zoom-in overflow-hidden rounded-xl bg-black/10 ring ring-surface-hover",
+					"w-full cursor-zoom-in overflow-hidden rounded-xl bg-surface-muted ring ring-surface-hover",
 					isZoomed && "pointer-events-none opacity-0",
 					className,
 				)}
@@ -59,7 +59,7 @@ export function ZoomableImage({ src, alt, width, height, className }: ZoomableIm
 					<>
 						{/* Backdrop */}
 						<motion.div
-							className="fixed inset-0 z-40 bg-white/90 backdrop-blur-md"
+							className="fixed inset-0 z-40 bg-background/90 backdrop-blur-md"
 							initial={{ opacity: 0 }}
 							animate={{ opacity: 1 }}
 							exit={{ opacity: 0 }}
@@ -77,7 +77,7 @@ export function ZoomableImage({ src, alt, width, height, className }: ZoomableIm
 						>
 							<motion.div
 								layoutId={layoutId}
-								className="w-full select-none overflow-hidden rounded-xl bg-black/10 ring ring-black/10 lg:max-w-[75vw] 2xl:max-w-[1200px]"
+								className="w-full select-none overflow-hidden rounded-xl bg-surface-muted ring ring-surface-hover lg:max-w-[75vw] 2xl:max-w-[1200px]"
 								transition={{ type: "spring", duration: 0.2, bounce: 0 }}
 							>
 								<Image

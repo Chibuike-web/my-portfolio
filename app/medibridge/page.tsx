@@ -32,6 +32,7 @@ import patientTransferFifth from "@/assets/medibridge/patient-transfers-fifth.we
 import patientTransferSixth from "@/assets/medibridge/patient-transfers-sixth.webp";
 import patientTransferSeventh from "@/assets/medibridge/patient-transfers-seventh.webp";
 import ProgressBar from "@/components/progress-bar";
+import { cookies } from "next/headers";
 
 const headingClass = "text-lg font-medium tight text-balance";
 const bodyClass = "font-medium leading-[1.4] tight text-muted-foreground text-pretty";
@@ -66,9 +67,30 @@ const patientTransferGridImages = [
 	patientTransferSeventh,
 ];
 
-export default function MedibridgePage() {
+const navItems = [
+	{
+		id: "overview",
+		label: "Overview",
+	},
+	{
+		id: "patient-onboarding",
+		label: "Patient Onboarding",
+	},
+	{
+		id: "patient-management",
+		label: "Patient Management",
+	},
+	{
+		id: "patient-transfer",
+		label: "Patient Transfer",
+	},
+];
+
+export default async function MedibridgePage() {
+	const cookieStore = await cookies();
+	const stored = cookieStore.get("isExpandedValue")?.value;
 	return (
-		<main className="mx-auto w-full max-w-[48.875rem] px-4 py-22">
+		<main className="mx-auto w-full max-w-[48.875rem] px-4 pt-22 pb-30">
 			<nav className="flex items-center justify-between">
 				<Link
 					href="/"
@@ -80,30 +102,30 @@ export default function MedibridgePage() {
 				</Link>
 				<ThemeButton />
 			</nav>
-			<div className="my-22">
-				<div className="flex flex-wrap gap-y-6 items-center justify-between">
+			<header className="my-16 md:my-22">
+				<div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
 					<div className="flex flex-col gap-3">
-						<h1 className="text-[18px] font-semibold tight">Medibridge</h1>
+						<h1 className="text-lg font-semibold tight text-balance">Medibridge</h1>
 						<div className="flex items-center gap-1.5">
-							<p className="font-medium text-[1rem] text-muted-foreground tight no-line-height">
+							<p className="text-base font-medium text-muted-foreground tight no-line-height">
 								AI-powered healthcare management system
 							</p>
-							<span className="size-0.5 bg-muted-foreground rounded-full shrink-0" />
-							<p className="font-medium text-[1rem] text-muted-foreground tight no-line-height">
+							<span className="size-0.5 rounded-full bg-muted-foreground" />
+							<p className="text-base font-medium text-muted-foreground tight no-line-height">
 								2025
 							</p>
 						</div>
 					</div>
-					<div className="flex gap-2">
+					<div className="flex flex-wrap gap-2">
 						{tags.map((tag) => (
 							<Tag key={tag.label} label={tag.label} color={tag.color} bgColor={tag.bgColor} />
 						))}
 					</div>
 				</div>
-			</div>
-			<section id="overview" className="my-22 ">
-				<div className=" grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-8">
-					<div className="flex flex-col gap-2 w-full">
+			</header>
+			<section id="overview" className="my-22">
+				<div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-x-6 md:gap-y-8">
+					<div className="flex w-full flex-col gap-2">
 						<p className="font-secondary font-semibold text-foreground">PROBLEM STATEMENT</p>
 						<p className="font-medium text-muted-foreground tight leading-[1.4] text-pretty">
 							Medical records are still commonly stored as paper files, scanned documents, PDFs, or
@@ -115,7 +137,7 @@ export default function MedibridgePage() {
 							of care.
 						</p>
 					</div>
-					<div className="flex flex-col gap-2 w-full">
+					<div className="flex w-full flex-col gap-2">
 						<p className="font-secondary font-semibold text-foreground">OBJECTIVE</p>
 						<p className="font-medium text-muted-foreground tight leading-[1.4] text-pretty">
 							Design a platform that helps hospitals and clinics digitize medical records, extract
@@ -125,7 +147,7 @@ export default function MedibridgePage() {
 							reliable transfer process with review and patient approval workflows.ople.
 						</p>
 					</div>
-					<div className="flex flex-col gap-2 w-full">
+					<div className="flex w-full flex-col gap-2">
 						<p className="font-secondary font-semibold text-foreground">SOLUTION OVERVIEW</p>
 						<p className="font-medium text-muted-foreground tight leading-[1.4] text-pretty">
 							MediBridge is an AI-powered healthcare platform designed to convert physical and
@@ -137,8 +159,8 @@ export default function MedibridgePage() {
 							management and continuity of care.
 						</p>
 					</div>
-					<div className="flex items-cemter justify-between">
-						<div className="flex flex-col gap-2 w-full">
+					<div className="grid gap-6 sm:grid-cols-2">
+						<div className="flex w-full flex-col gap-2">
 							<p className="font-secondary font-semibold text-foreground">ROLE</p>
 							<div>
 								<p className="font-medium text-muted-foreground tight">Product Designer</p>
@@ -146,7 +168,7 @@ export default function MedibridgePage() {
 								<p className="font-medium text-muted-foreground tight">Product Engineer</p>
 							</div>
 						</div>
-						<div className="flex flex-col gap-2 w-full">
+						<div className="flex w-full flex-col gap-2">
 							<p className="font-secondary font-semibold text-foreground">DURATION</p>
 							<p className="font-medium text-muted-foreground tight">Ongoing</p>
 						</div>
@@ -419,7 +441,7 @@ export default function MedibridgePage() {
 					<p className="text-foreground font-medium no-line-height">Nomba</p>
 				</div>
 			</Link>
-			<ProgressBar />
+			<ProgressBar items={navItems} initialState={stored} />
 		</main>
 	);
 }

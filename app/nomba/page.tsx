@@ -17,6 +17,8 @@ import { ZoomableImage } from "@/components/zoomable-image";
 import { cn } from "@/lib/utils";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
+import ProgressBar from "@/components/progress-bar";
+import { cookies } from "next/headers";
 
 const headingClass = "text-lg font-medium tight text-balance";
 const bodyClass = "font-medium leading-[1.4] tight text-muted-foreground text-pretty";
@@ -26,7 +28,42 @@ const feedbackItemClass = "mt-6 flex items-start gap-4 sm:gap-6";
 const feedbackNumberClass =
 	"block min-w-10 rounded-full border border-surface-hover bg-surface-muted px-4 py-1.5 text-center tabular-nums";
 
-export default function NombaPage() {
+const navItems = [
+	{
+		id: "overview",
+		label: "Overview",
+	},
+	{
+		id: "selecting-recipients-from-contacts",
+		label: "Selecting Recipients from Contacts",
+	},
+	{
+		id: "manually-entering-phone-numbers",
+		label: "Manually Entering Phone Numbers",
+	},
+	{
+		id: "recipient-management",
+		label: "Recipient Management",
+	},
+	{
+		id: "payment-review",
+		label: "Payment Review",
+	},
+
+	{
+		id: "transaction-summary-details",
+		label: "Transaction Summary & Details",
+	},
+	{
+		id: "design-feedback-iterations",
+		label: "Design Feedback & Iterations",
+	},
+];
+
+export default async function NombaPage() {
+	const cookieStore = await cookies();
+	const stored = cookieStore.get("isExpandedValue")?.value;
+
 	return (
 		<main className="mx-auto w-full max-w-[48.875rem] px-4 pt-22 pb-30">
 			<nav className="flex items-center justify-between">
@@ -45,11 +82,11 @@ export default function NombaPage() {
 				<div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
 					<div className="flex flex-col gap-3">
 						<h1 className="text-lg font-semibold tight text-balance">Nomba</h1>
-						<div className="flex flex-wrap items-center gap-1.5">
+						<div className="flex items-center gap-1.5">
 							<p className="text-base font-medium text-muted-foreground tight no-line-height">
 								Bulk Airtime Transfer
 							</p>
-							<span className="size-0.5 rounded-full bg-muted-foreground" />
+							<span className="size-0.5 rounded-full bg-muted-foreground flex shrink-0" />
 							<p className="text-base font-medium text-muted-foreground tight no-line-height">
 								2024
 							</p>
@@ -376,6 +413,7 @@ export default function NombaPage() {
 				</div>
 				<ArrowUpRight className="size-6" />
 			</Link>
+			<ProgressBar items={navItems} initialState={stored} />
 		</main>
 	);
 }

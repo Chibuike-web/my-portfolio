@@ -22,19 +22,19 @@ export function Projects() {
 	return (
 		<div className="py-22">
 			<h1 className="tight font-medium text-[1rem] text-foreground">Projects</h1>
-			<div className="group/projects flex flex-col gap-4 pt-10 md:flex-row md:items-center">
+			<div className="group/projects w-full flex flex-col gap-4 pt-10 md:flex-row md:items-center">
 				{projects.map((project) => (
 					<Link
 						key={project.href}
 						href={project.href}
-						className="relative w-full overflow-hidden rounded-3xl border border-border bg-surface-muted p-1.5 transition-all duration-200 ease-out group-hover/projects:opacity-35 hover:scale-[1.02] hover:!opacity-100 focus-visible:!opacity-100 md:max-w-[22.9375rem]"
+						className="relative w-full overflow-hidden rounded-3xl border border-border bg-surface-muted p-1.5 transition-all duration-200 ease-out group-hover/projects:opacity-35 hover:scale-[1.02] hover:!opacity-100 focus-visible:!opacity-100 md:flex-1"
 					>
 						<div className="relative aspect-[367/350] w-full overflow-hidden rounded-[1.125rem] bg-background">
 							<Image
 								src={project.image}
 								alt={`${project.name} project preview`}
 								fill
-								sizes="(max-width: 47.9375rem) 100vw, 22.9375rem"
+								sizes="(max-width: 47.9375rem) 100vw, 50vw"
 								className="w-full"
 								loading="eager"
 							/>

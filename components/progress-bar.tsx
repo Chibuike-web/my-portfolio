@@ -45,9 +45,9 @@ export default function ProgressBar({
 		};
 	}, []);
 	return (
-		<div className="fixed bottom-4 left-1/2 z-[100] w-[calc(100%-32px)] max-w-[350px] -translate-x-1/2 rounded-[24px] bg-[#464648] text-white overflow-hidden">
+		<div className="fixed bottom-4 left-1/2 z-[100] w-[calc(100%_-_2rem)] max-w-[21.875rem] -translate-x-1/2 overflow-hidden rounded-3xl bg-[#464648] text-white">
 			<button
-				className="flex justify-between items-center w-full px-5 py-[12px] cursor-point sticky top-0 bg-[#464648] z-10 text-left"
+				className="sticky top-0 z-10 flex w-full cursor-point items-center justify-between bg-[#464648] px-5 py-3 text-left"
 				onClick={() => {
 					setIsExpanded((prev) => {
 						const next = !prev;
@@ -57,14 +57,14 @@ export default function ProgressBar({
 				}}
 			>
 				<span>{activeSectionHeading}</span>
-				<ChevronsUpDown className="size-[18px]" />
+				<ChevronsUpDown className="size-4.5" />
 			</button>
 			<AnimatePresence initial={false}>
 				{isExpanded && (
 					<motion.div
-						initial={{ opacity: 0, filter: "blur(4px)", height: 0 }}
-						animate={{ opacity: 1, filter: "blur(0px)", height: "auto" }}
-						exit={{ opacity: 0, filter: "blur(4px)", height: 0 }}
+						initial={{ opacity: 0, filter: "blur(0.25rem)", height: 0 }}
+						animate={{ opacity: 1, filter: "blur(0)", height: "auto" }}
+						exit={{ opacity: 0, filter: "blur(0.25rem)", height: 0 }}
 						transition={{ duration: 0.15, ease: "linear" }}
 						className="overflow-hidden"
 					>
@@ -75,7 +75,7 @@ export default function ProgressBar({
 									<li
 										key={item.id}
 										className={cn(
-											"hover:bg-white/10 rounded-full w-full text-[12px]",
+											"w-full rounded-full text-[0.75rem] hover:bg-white/10",
 											isActive && "bg-white/15",
 										)}
 									>

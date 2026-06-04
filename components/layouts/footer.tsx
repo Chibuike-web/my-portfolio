@@ -13,7 +13,7 @@ export function Footer() {
 
 	return (
 		<div className="flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-between font-medium tight">
-			<p className="w-full md:max-w-[200px]">Designed and Developed by Chibuike ©2026</p>
+			<p className="w-full md:max-w-[12.5rem]">Designed and Developed by Chibuike ©2026</p>
 			<button
 				type="button"
 				aria-label={copied ? "Email copied" : "Copy email address"}

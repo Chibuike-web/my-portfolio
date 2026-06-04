@@ -20,10 +20,10 @@ import { cookies } from "next/headers";
 import { Suspense } from "react";
 import { Theme } from "@/components/theme";
 
-const headingClass = "text-lg font-medium tight text-balance";
-const bodyClass = "font-medium leading-[1.4] tight text-muted-foreground text-pretty";
+const headingClass = "text-[1.125rem] font-medium tight text-balance";
+const bodyClass = "font-medium tight text-muted-foreground text-pretty";
 const detailListClass = "my-6 rounded-xl bg-surface-muted p-4";
-const detailItemClass = "font-medium leading-[1.4] tight text-muted-foreground";
+const detailItemClass = "font-medium tight text-muted-foreground";
 const feedbackItemClass = "mt-6 flex items-start gap-4 sm:gap-6";
 const feedbackNumberClass =
 	"block min-w-10 rounded-full border border-surface-hover bg-surface-muted px-4 py-1.5 text-center tabular-nums";
@@ -62,7 +62,7 @@ const navItems = [
 
 export default function NombaPage() {
 	return (
-		<main className="mx-auto w-full max-w-[48.875rem] px-4 pt-22 pb-30">
+		<main className="page-shell">
 			<nav className="flex items-center justify-between">
 				<Link
 					href="/"
@@ -79,13 +79,13 @@ export default function NombaPage() {
 			<header className="my-16 md:my-22">
 				<div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
 					<div className="flex flex-col gap-3">
-						<h1 className="text-lg font-semibold tight text-balance">Nomba</h1>
+						<h1 className="text-[1.125rem] font-semibold tight text-balance">Nomba</h1>
 						<div className="flex items-center gap-1.5">
-							<p className="text-base font-medium text-muted-foreground tight no-line-height">
+							<p className="text-[1rem] font-medium text-muted-foreground tight no-line-height">
 								Bulk Airtime Transfer
 							</p>
 							<span className="size-0.5 rounded-full bg-muted-foreground flex shrink-0" />
-							<p className="text-base font-medium text-muted-foreground tight no-line-height">
+							<p className="text-[1rem] font-medium text-muted-foreground tight no-line-height">
 								2024
 							</p>
 						</div>
@@ -396,7 +396,7 @@ export default function NombaPage() {
 			</section>
 			<Link
 				href="/medibridge"
-				className="mt-22 flex items-end justify-between rounded-[12px] bg-surface-muted p-5 transition-colors duration-150 ease-out hover:bg-surface-hover"
+				className="case-study-nav-card"
 			>
 				<div className="flex flex-col gap-3">
 					<p className="text-muted-foreground font-medium no-line-height">Next</p>

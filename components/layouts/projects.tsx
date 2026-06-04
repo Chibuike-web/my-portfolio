@@ -27,14 +27,14 @@ export function Projects() {
 					<Link
 						key={project.href}
 						href={project.href}
-						className="relative w-full overflow-hidden rounded-[24px] border border-border bg-surface-muted p-[6px] transition-all duration-200 ease-out group-hover/projects:opacity-35 hover:!opacity-100 focus-visible:!opacity-100 md:max-w-[367px] hover:scale-[1.02]"
+						className="relative w-full overflow-hidden rounded-3xl border border-border bg-surface-muted p-1.5 transition-all duration-200 ease-out group-hover/projects:opacity-35 hover:scale-[1.02] hover:!opacity-100 focus-visible:!opacity-100 md:max-w-[22.9375rem]"
 					>
-						<div className="relative aspect-[367/350] w-full overflow-hidden rounded-[18px] bg-background">
+						<div className="relative aspect-[367/350] w-full overflow-hidden rounded-[1.125rem] bg-background">
 							<Image
 								src={project.image}
 								alt={`${project.name} project preview`}
 								fill
-								sizes="(max-width: 767px) 100vw, 367px"
+								sizes="(max-width: 47.9375rem) 100vw, 22.9375rem"
 								className="w-full"
 								loading="eager"
 							/>

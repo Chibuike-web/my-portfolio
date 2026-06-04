@@ -8,7 +8,7 @@ export function Tag({ label, color, bgColor }: TagProps) {
 	return (
 		<div className="flex items-center gap-2">
 			<span
-				className="px-2 py-1.5 text-[12px] rounded-full"
+				className="rounded-full px-2 py-1.5 text-[0.75rem]"
 				style={{
 					color,
 					backgroundColor: bgColor,

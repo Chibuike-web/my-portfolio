@@ -35,8 +35,8 @@ import ProgressBar from "@/components/progress-bar";
 import { Suspense } from "react";
 import { Theme } from "@/components/theme";
 
-const headingClass = "text-lg font-medium tight text-balance";
-const bodyClass = "font-medium leading-[1.4] tight text-muted-foreground text-pretty";
+const headingClass = "text-[1.125rem] font-medium tight text-balance";
+const bodyClass = "font-medium tight text-muted-foreground text-pretty";
 const patientOnboardingGridImages = [
 	patientOnboardingSecond,
 	patientOnboardingThird,
@@ -89,7 +89,7 @@ const navItems = [
 
 export default function MedibridgePage() {
 	return (
-		<main className="mx-auto w-full max-w-[48.875rem] px-4 pt-22 pb-30">
+		<main className="page-shell">
 			<nav className="flex items-center justify-between">
 				<Link
 					href="/"
@@ -106,13 +106,13 @@ export default function MedibridgePage() {
 			<header className="my-16 md:my-22">
 				<div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
 					<div className="flex flex-col gap-3">
-						<h1 className="text-lg font-semibold tight text-balance">Medibridge</h1>
+						<h1 className="text-[1.125rem] font-semibold tight text-balance">Medibridge</h1>
 						<div className="flex items-center gap-1.5">
-							<p className="text-base font-medium text-muted-foreground tight no-line-height">
+							<p className="text-[1rem] font-medium text-muted-foreground tight no-line-height">
 								AI-powered healthcare management system
 							</p>
 							<span className="size-0.5 rounded-full bg-muted-foreground" />
-							<p className="text-base font-medium text-muted-foreground tight no-line-height">
+							<p className="text-[1rem] font-medium text-muted-foreground tight no-line-height">
 								2025
 							</p>
 						</div>
@@ -128,7 +128,7 @@ export default function MedibridgePage() {
 				<div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-x-6 md:gap-y-8">
 					<div className="flex w-full flex-col gap-2">
 						<p className="font-secondary font-semibold text-foreground">PROBLEM STATEMENT</p>
-						<p className="font-medium text-muted-foreground tight leading-[1.4] text-pretty">
+						<p className="font-medium text-muted-foreground tight text-pretty">
 							Medical records are still commonly stored as paper files, scanned documents, PDFs, or
 							images. This makes it difficult for hospitals and clinics to quickly access, organize,
 							and transfer accurate patient information, especially during inter-facility transfers.
@@ -140,7 +140,7 @@ export default function MedibridgePage() {
 					</div>
 					<div className="flex w-full flex-col gap-2">
 						<p className="font-secondary font-semibold text-foreground">OBJECTIVE</p>
-						<p className="font-medium text-muted-foreground tight leading-[1.4] text-pretty">
+						<p className="font-medium text-muted-foreground tight text-pretty">
 							Design a platform that helps hospitals and clinics digitize medical records, extract
 							structured patient information from unstructured files, and streamline patient record
 							transfers between healthcare facilities. The goal is to reduce administrative
@@ -150,7 +150,7 @@ export default function MedibridgePage() {
 					</div>
 					<div className="flex w-full flex-col gap-2">
 						<p className="font-secondary font-semibold text-foreground">SOLUTION OVERVIEW</p>
-						<p className="font-medium text-muted-foreground tight leading-[1.4] text-pretty">
+						<p className="font-medium text-muted-foreground tight text-pretty">
 							MediBridge is an AI-powered healthcare platform designed to convert physical and
 							unstructured medical records into structured digital patient data. The platform allows
 							healthcare staff to upload scanned documents, PDFs, and images, automatically extract
@@ -175,7 +175,7 @@ export default function MedibridgePage() {
 						</div>
 					</div>
 				</div>
-				<div className="mt-22 text-muted-foreground font-medium text-pretty flex flex-col gap-2 leading-[1.3]">
+				<div className="mt-22 text-muted-foreground font-medium text-pretty flex flex-col gap-2">
 					<p>
 						Picture this: a patient is rushed from a clinic in Surulere to a specialist hospital in
 						Victoria Island. She’s unconscious. Her family does not know her medication history. The
@@ -233,12 +233,12 @@ export default function MedibridgePage() {
 							width={3000}
 							height={1800}
 							alt=""
-							className="md:rounded-[8px]"
+							className="md:rounded-lg"
 						/>
 					))}
 				</div>
 
-				<div className="mt-6 text-muted-foreground font-medium text-pretty flex flex-col gap-2 leading-[1.3]">
+				<div className="mt-6 text-muted-foreground font-medium text-pretty flex flex-col gap-2">
 					<p>
 						Patient onboarding is usually the first point where hospital staff interact with a new
 						record, so I designed the experience to feel simple, reliable, and easy to validate.
@@ -273,7 +273,7 @@ export default function MedibridgePage() {
 			</section>
 			<section id="patient-management" className="mt-22">
 				<h2 className={cn(headingClass, "mb-3")}>Patient Management</h2>
-				<div className="mt-3 text-muted-foreground font-medium text-pretty flex flex-col gap-2 leading-[1.3] mb-6">
+				<div className="mt-3 text-muted-foreground font-medium text-pretty flex flex-col gap-2 mb-6">
 					<p>
 						After onboarding patients into the system, I designed the day-to-day experience of
 						managing patient records inside the hospital workflow. Medical information changes
@@ -310,11 +310,11 @@ export default function MedibridgePage() {
 							width={3000}
 							height={1800}
 							alt=""
-							className="md:rounded-[8px]"
+							className="md:rounded-lg"
 						/>
 					))}
 				</div>
-				<div className="mt-6 text-muted-foreground font-medium text-pretty flex flex-col gap-2 leading-[1.3]">
+				<div className="mt-6 text-muted-foreground font-medium text-pretty flex flex-col gap-2">
 					<p>
 						Managing patient information in MediBridge goes beyond storing uploaded medical
 						documents. The record system is built around editable healthcare data that can grow and
@@ -355,7 +355,7 @@ export default function MedibridgePage() {
 
 			<section id="patient-transfer" className="mt-22">
 				<h2 className={cn(headingClass, "mb-3")}>Patient Transfer</h2>
-				<div className="mt-3 text-muted-foreground font-medium text-pretty flex flex-col gap-2 leading-[1.3]">
+				<div className="mt-3 text-muted-foreground font-medium text-pretty flex flex-col gap-2">
 					<p>
 						Another area I focused on was improving how patient records are transferred between
 						hospitals. In many cases, transfers still involve manually sending files through email,
@@ -371,7 +371,7 @@ export default function MedibridgePage() {
 					</p>
 				</div>
 
-				<div className="mt-3 text-muted-foreground font-medium text-pretty flex flex-col gap-2 leading-[1.3] mb-6">
+				<div className="mt-3 text-muted-foreground font-medium text-pretty flex flex-col gap-2 mb-6">
 					<p>
 						Transfers begin from an existing patient profile to ensure records are already verified
 						and organized before being shared with another hospital. During the transfer flow,
@@ -395,11 +395,11 @@ export default function MedibridgePage() {
 							width={3000}
 							height={1800}
 							alt=""
-							className="md:rounded-[8px]"
+							className="md:rounded-lg"
 						/>
 					))}
 				</div>
-				<div className="text-muted-foreground font-medium text-pretty flex flex-col gap-2 leading-[1.3] mt-6">
+				<div className="text-muted-foreground font-medium text-pretty flex flex-col gap-2 mt-6">
 					<p>
 						Transfers begin from an existing patient profile to ensure records are already verified
 						and organized before being shared with another hospital. During the transfer flow,
@@ -433,7 +433,7 @@ export default function MedibridgePage() {
 			</section>
 			<Link
 				href="/nomba"
-				className="mt-22 flex items-end justify-between rounded-[12px] bg-surface-muted p-5 transition-colors duration-150 ease-out hover:bg-surface-hover"
+				className="case-study-nav-card"
 			>
 				<ArrowUpLeft className="size-6" />
 

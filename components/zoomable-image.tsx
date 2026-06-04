@@ -69,7 +69,7 @@ export function ZoomableImage({ src, alt, width, height, className }: ZoomableIm
 
 						{/* Expanded state */}
 						<motion.div
-							className="fixed inset-0 z-50 flex cursor-zoom-out items-center justify-center px-6 lg:px-0"
+							className="fixed inset-0 z-50 flex cursor-zoom-out items-center justify-center px-4 lg:px-0"
 							onClick={handleClose}
 							initial={{ opacity: 1 }}
 							animate={{ opacity: 1 }}
@@ -77,7 +77,7 @@ export function ZoomableImage({ src, alt, width, height, className }: ZoomableIm
 						>
 							<motion.div
 								layoutId={layoutId}
-								className="w-full select-none overflow-hidden rounded-xl bg-surface-muted ring ring-surface-hover lg:max-w-[75vw] 2xl:max-w-[1200px]"
+								className="w-full select-none overflow-hidden rounded-xl bg-surface-muted ring ring-surface-hover lg:max-w-[75vw] 2xl:max-w-[75rem]"
 								transition={{ type: "spring", duration: 0.2, bounce: 0 }}
 							>
 								<Image

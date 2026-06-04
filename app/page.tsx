@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
 	return (
-		<main className="mx-auto w-full max-w-[48.875rem] px-4 py-22">
+		<main className="mx-auto w-full max-w-[48.875rem] px-4 pt-22 pb-30">
 			<Navbar />
 			<Hero />
 			<Projects />

@@ -12,6 +12,17 @@ const geistMono = Geist_Mono({
 	subsets: ["latin"],
 });
 
+const themeInitScript = String.raw`
+try {
+	const theme = localStorage.getItem("theme");
+	const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+	const shouldUseDark = theme === "dark" || (theme === "system" && prefersDark);
+
+	document.documentElement.classList.toggle("dark", shouldUseDark);
+	document.documentElement.classList.toggle("light", !shouldUseDark);
+} catch (_) {}
+`;
+
 export const metadata: Metadata = {
 	metadataBase: new URL("https://chibuike-maduabuchi.vercel.app"),
 	title: {
@@ -50,6 +61,9 @@ export default function RootLayout({
 			className={`${inter.variable} ${geistMono.variable} antialiased`}
 			suppressHydrationWarning
 		>
+			<head>
+				<script type="text/javascript" dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+			</head>
 			<body>
 				{children}
 				<div

@@ -33,6 +33,8 @@ import patientTransferSixth from "@/assets/medibridge/patient-transfers-sixth.we
 import patientTransferSeventh from "@/assets/medibridge/patient-transfers-seventh.webp";
 import ProgressBar from "@/components/progress-bar";
 import { cookies } from "next/headers";
+import { Suspense } from "react";
+import { Theme } from "@/components/theme";
 
 const headingClass = "text-lg font-medium tight text-balance";
 const bodyClass = "font-medium leading-[1.4] tight text-muted-foreground text-pretty";
@@ -86,9 +88,7 @@ const navItems = [
 	},
 ];
 
-export default async function MedibridgePage() {
-	const cookieStore = await cookies();
-	const stored = cookieStore.get("isExpandedValue")?.value;
+export default function MedibridgePage() {
 	return (
 		<main className="mx-auto w-full max-w-[48.875rem] px-4 pt-22 pb-30">
 			<nav className="flex items-center justify-between">
@@ -100,7 +100,9 @@ export default async function MedibridgePage() {
 					<ArrowLeft className="size-5" />
 					<span className="sr-only">Back to home</span>
 				</Link>
-				<ThemeButton />
+				<Suspense>
+					<Theme />
+				</Suspense>
 			</nav>
 			<header className="my-16 md:my-22">
 				<div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
@@ -441,7 +443,9 @@ export default async function MedibridgePage() {
 					<p className="text-foreground font-medium no-line-height">Nomba</p>
 				</div>
 			</Link>
-			<ProgressBar items={navItems} initialState={stored} />
+			<Suspense>
+				<Progress />
+			</Suspense>
 		</main>
 	);
 }
@@ -463,3 +467,9 @@ const tags = [
 		bgColor: "var(--green-muted)",
 	},
 ];
+
+async function Progress() {
+	const cookieStore = await cookies();
+	const stored = cookieStore.get("isExpandedValue")?.value;
+	return <ProgressBar items={navItems} initialState={stored} />;
+}

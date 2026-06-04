@@ -8,6 +8,17 @@
 	--ring: oklch(37.2% 0 0 / 15%);
 	--surface-hover: oklch(37.2% 0 0 / 10%);
 	--surface-muted: oklch(37.2% 0 0 / 5%);
+	--scrollbar-thumb: oklch(37.2% 0 0 / 30%);
+	--scrollbar-thumb-hover: oklch(37.2% 0 0 / 45%);
+	--project-thumbnail-overlay: linear-gradient(
+		to top,
+		rgba(255, 255, 255, 1) 0%,
+		rgba(255, 255, 255, 0.98) 24%,
+		rgba(255, 255, 255, 0.9) 40%,
+		rgba(255, 255, 255, 0.7) 52%,
+		rgba(255, 255, 255, 0.35) 66%,
+		rgba(255, 255, 255, 0) 80%
+	);
 
 	--blue: oklch(49% 0.21 264);
 	--blue-muted: oklch(49% 0.21 264 / 30%);
@@ -23,6 +34,7 @@
 
 	--font-primary: var(--font-inter);
 	--font-secondary: var(--font-geist-mono);
+	color-scheme: light;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -34,6 +46,17 @@
 		--ring: oklch(100% 0 0 / 15%);
 		--surface-hover: oklch(100% 0 0 / 10%);
 		--surface-muted: oklch(100% 0 0 / 5%);
+		--scrollbar-thumb: oklch(100% 0 0 / 30%);
+		--scrollbar-thumb-hover: oklch(100% 0 0 / 45%);
+		--project-thumbnail-overlay: linear-gradient(
+			to top,
+			rgba(9, 9, 11, 1) 0%,
+			rgba(9, 9, 11, 0.98) 24%,
+			rgba(9, 9, 11, 0.9) 40%,
+			rgba(9, 9, 11, 0.7) 52%,
+			rgba(9, 9, 11, 0.35) 66%,
+			rgba(9, 9, 11, 0) 80%
+		);
 
 		--blue: oklch(72% 0.15 252);
 		--blue-muted: oklch(72% 0.15 252 / 24%);
@@ -48,6 +71,39 @@
 		--green-muted: oklch(76% 0.13 154 / 24%);
 	}
 }
+.light {
+	--background: oklch(100% 0 0);
+	--foreground: oklch(37.2% 0 0);
+	--muted-foreground: oklch(37.2% 0 0 / 70%);
+	--border: oklch(37.2% 0 0 / 15%);
+	--ring: oklch(37.2% 0 0 / 15%);
+	--surface-hover: oklch(37.2% 0 0 / 10%);
+	--surface-muted: oklch(37.2% 0 0 / 5%);
+	--scrollbar-thumb: oklch(37.2% 0 0 / 30%);
+	--scrollbar-thumb-hover: oklch(37.2% 0 0 / 45%);
+	--project-thumbnail-overlay: linear-gradient(
+		to top,
+		rgba(255, 255, 255, 1) 0%,
+		rgba(255, 255, 255, 0.98) 24%,
+		rgba(255, 255, 255, 0.9) 40%,
+		rgba(255, 255, 255, 0.7) 52%,
+		rgba(255, 255, 255, 0.35) 66%,
+		rgba(255, 255, 255, 0) 80%
+	);
+
+	--blue: oklch(49% 0.21 264);
+	--blue-muted: oklch(49% 0.21 264 / 30%);
+
+	--amber: oklch(60% 0.16 55);
+	--amber-muted: oklch(60% 0.16 55 / 30%);
+
+	--red: oklch(57% 0.2 38);
+	--red-muted: oklch(57% 0.2 38 / 30%);
+
+	--green: oklch(55% 0.14 145);
+	--green-muted: oklch(55% 0.14 145 / 30%);
+	color-scheme: light;
+}
 .dark {
 	--background: oklch(14.077% 0.004386 285.823);
 	--foreground: oklch(100% 0 0);
@@ -56,6 +112,17 @@
 	--ring: oklch(100% 0 0 / 15%);
 	--surface-hover: oklch(100% 0 0 / 10%);
 	--surface-muted: oklch(100% 0 0 / 5%);
+	--scrollbar-thumb: oklch(100% 0 0 / 30%);
+	--scrollbar-thumb-hover: oklch(100% 0 0 / 45%);
+	--project-thumbnail-overlay: linear-gradient(
+		to top,
+		rgba(9, 9, 11, 1) 0%,
+		rgba(9, 9, 11, 0.98) 24%,
+		rgba(9, 9, 11, 0.9) 40%,
+		rgba(9, 9, 11, 0.7) 52%,
+		rgba(9, 9, 11, 0.35) 66%,
+		rgba(9, 9, 11, 0) 80%
+	);
 
 	--blue: oklch(72% 0.15 252);
 	--blue-muted: oklch(72% 0.15 252 / 24%);
@@ -68,6 +135,7 @@
 
 	--green: oklch(76% 0.13 154);
 	--green-muted: oklch(76% 0.13 154 / 24%);
+	color-scheme: dark;
 }
 
 @theme {
@@ -117,35 +185,7 @@ body {
 } */
 
 .project-thumbnail-overlay {
-	background: linear-gradient(
-		to top,
-		rgba(255, 255, 255, 1) 0%,
-		rgba(255, 255, 255, 0.93) 12%,
-		rgba(255, 255, 255, 0.85) 21%,
-		rgba(255, 255, 255, 0.76) 29%,
-		rgba(255, 255, 255, 0.67) 35%,
-		rgba(255, 255, 255, 0.59) 40%,
-		rgba(255, 255, 255, 0.5) 45%,
-		rgba(255, 255, 255, 0.41) 48%,
-		rgba(255, 255, 255, 0) 58%
-	);
-}
-
-@media (prefers-color-scheme: dark) {
-	.project-thumbnail-overlay {
-		background: linear-gradient(
-			to top,
-			rgba(9, 9, 11, 1) 0%,
-			rgba(9, 9, 11, 0.93) 12%,
-			rgba(9, 9, 11, 0.85) 21%,
-			rgba(9, 9, 11, 0.76) 29%,
-			rgba(9, 9, 11, 0.67) 35%,
-			rgba(9, 9, 11, 0.59) 40%,
-			rgba(9, 9, 11, 0.5) 45%,
-			rgba(9, 9, 11, 0.41) 48%,
-			rgba(9, 9, 11, 0) 58%
-		);
-	}
+	background: var(--project-thumbnail-overlay);
 }
 
 @utility no-line-height {
@@ -177,7 +217,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-	background: rgba(0, 0, 0, 0.3);
+	background: var(--scrollbar-thumb);
 	border-radius: 6.25rem;
 	border: 0.125rem solid transparent;
 	background-clip: content-box;
@@ -185,20 +225,8 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	background: rgba(0, 0, 0, 0.2);
+	background: var(--scrollbar-thumb-hover);
 	background-clip: content-box;
-}
-
-@media (prefers-color-scheme: dark) {
-	::-webkit-scrollbar-thumb {
-		background: rgba(255, 255, 255, 0.3);
-		background-clip: content-box;
-	}
-
-	::-webkit-scrollbar-thumb:hover {
-		background: rgba(255, 255, 255, 0.2);
-		background-clip: content-box;
-	}
 }
 
 @utility link {

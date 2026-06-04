@@ -45,7 +45,7 @@ export default function ProgressBar({
 		};
 	}, []);
 	return (
-		<div className="fixed bottom-4 left-1/2 z-[100] w-[calc(100%-32px)] max-w-[350px] -translate-x-1/2 rounded-[24px] bg-[#464648] overflow-hidden">
+		<div className="fixed bottom-4 left-1/2 z-[100] w-[calc(100%-32px)] max-w-[350px] -translate-x-1/2 rounded-[24px] bg-[#464648] text-white overflow-hidden">
 			<button
 				className="flex justify-between items-center w-full px-5 py-[12px] cursor-point sticky top-0 bg-[#464648] z-10 text-left"
 				onClick={() => {

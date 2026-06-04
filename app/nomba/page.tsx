@@ -10,15 +10,15 @@ import ninth from "@/assets/nomba/ninth.webp";
 import tenth from "@/assets/nomba/tenth.webp";
 import eleventh from "@/assets/nomba/eleventh.webp";
 import twelfth from "@/assets/nomba/twelfth.webp";
-
 import { Tag } from "@/components/tag";
-import { ThemeButton } from "@/components/theme-button";
 import { ZoomableImage } from "@/components/zoomable-image";
 import { cn } from "@/lib/utils";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import ProgressBar from "@/components/progress-bar";
 import { cookies } from "next/headers";
+import { Suspense } from "react";
+import { Theme } from "@/components/theme";
 
 const headingClass = "text-lg font-medium tight text-balance";
 const bodyClass = "font-medium leading-[1.4] tight text-muted-foreground text-pretty";
@@ -60,10 +60,7 @@ const navItems = [
 	},
 ];
 
-export default async function NombaPage() {
-	const cookieStore = await cookies();
-	const stored = cookieStore.get("isExpandedValue")?.value;
-
+export default function NombaPage() {
 	return (
 		<main className="mx-auto w-full max-w-[48.875rem] px-4 pt-22 pb-30">
 			<nav className="flex items-center justify-between">
@@ -75,9 +72,10 @@ export default async function NombaPage() {
 					<ArrowLeft className="size-5" />
 					<span className="sr-only">Back to home</span>
 				</Link>
-				<ThemeButton />
+				<Suspense>
+					<Theme />
+				</Suspense>{" "}
 			</nav>
-
 			<header className="my-16 md:my-22">
 				<div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
 					<div className="flex flex-col gap-3">
@@ -99,7 +97,6 @@ export default async function NombaPage() {
 					</div>
 				</div>
 			</header>
-
 			<section
 				id="overview"
 				className="my-22 grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-x-6 md:gap-y-8"
@@ -143,7 +140,6 @@ export default async function NombaPage() {
 					</div>
 				</div>
 			</section>
-
 			<section id="selecting-recipients-from-contacts">
 				<div className="flex flex-col gap-3">
 					<h2 className={headingClass}>Selecting Recipients from Contacts</h2>
@@ -180,7 +176,6 @@ export default async function NombaPage() {
 					alt="Multi-recipient transfer flow showing contact selection and a list of recipients with multiple contacts selected."
 				/>
 			</section>
-
 			<section id="manually-entering-phone-numbers" className="mt-22">
 				<div className="flex flex-col gap-3">
 					<h2 className={headingClass}>Manually Entering Phone Numbers</h2>
@@ -218,7 +213,6 @@ export default async function NombaPage() {
 					alt="Screen for entering multiple recipient phone numbers for an airtime purchase."
 				/>
 			</section>
-
 			<section id="recipient-management" className="mt-22">
 				<h2 className={cn(headingClass, "mb-3")}>Recipient Management</h2>
 				<p className={cn(bodyClass, "mb-6")}>
@@ -233,7 +227,6 @@ export default async function NombaPage() {
 					alt="Screen showing selected recipients and transfer details before purchase."
 				/>
 			</section>
-
 			<section id="payment-review" className="mt-22">
 				<h2 className={cn(headingClass, "mb-3")}>Payment Review</h2>
 				<p className={cn(bodyClass, "mb-6")}>
@@ -250,7 +243,6 @@ export default async function NombaPage() {
 					alt="Payment review screen summarizing recipients, airtime amounts, and total cost."
 				/>
 			</section>
-
 			<section id="transaction-summary-details" className="mt-22">
 				<h2 className={cn(headingClass, "mb-3")}>Transaction Summary & Details</h2>
 				<p className={cn(bodyClass, "mb-6")}>
@@ -267,7 +259,6 @@ export default async function NombaPage() {
 					alt="Transaction summary and details screen for completed airtime transfers."
 				/>
 			</section>
-
 			<section id="design-feedback-iterations" className="mt-22">
 				<h2 className={cn(headingClass, "mb-3")}>Design Feedback & Iterations</h2>
 				<p className={bodyClass}>
@@ -413,7 +404,9 @@ export default async function NombaPage() {
 				</div>
 				<ArrowUpRight className="size-6" />
 			</Link>
-			<ProgressBar items={navItems} initialState={stored} />
+			<Suspense>
+				<Progress />
+			</Suspense>
 		</main>
 	);
 }
@@ -430,3 +423,9 @@ const tags = [
 		bgColor: "var(--amber-muted)",
 	},
 ];
+
+async function Progress() {
+	const cookieStore = await cookies();
+	const stored = cookieStore.get("isExpandedValue")?.value;
+	return <ProgressBar items={navItems} initialState={stored} />;
+}

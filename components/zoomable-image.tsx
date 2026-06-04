@@ -59,7 +59,7 @@ export function ZoomableImage({ src, alt, width, height, className }: ZoomableIm
 					<>
 						{/* Backdrop */}
 						<motion.div
-							className="fixed inset-0 z-40 bg-background/90 backdrop-blur-md"
+							className="fixed inset-0 z-[999] bg-background/90 backdrop-blur-md"
 							initial={{ opacity: 0 }}
 							animate={{ opacity: 1 }}
 							exit={{ opacity: 0 }}
@@ -69,7 +69,7 @@ export function ZoomableImage({ src, alt, width, height, className }: ZoomableIm
 
 						{/* Expanded state */}
 						<motion.div
-							className="fixed inset-0 z-50 flex cursor-zoom-out items-center justify-center px-4 lg:px-0"
+							className="fixed inset-0 z-[9999] flex cursor-zoom-out items-center justify-center px-4 lg:px-0"
 							onClick={handleClose}
 							initial={{ opacity: 1 }}
 							animate={{ opacity: 1 }}

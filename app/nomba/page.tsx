@@ -18,7 +18,7 @@ import Link from "next/link";
 import ProgressBar from "@/components/progress-bar";
 import { cookies } from "next/headers";
 import { Suspense } from "react";
-import { Theme } from "@/components/theme";
+import { ThemeButton } from "@/components/theme-button";
 
 const headingClass = "text-[1.125rem] font-medium tight text-balance";
 const bodyClass = "font-medium tight text-muted-foreground text-pretty";
@@ -72,9 +72,7 @@ export default function NombaPage() {
 					<ArrowLeft className="size-5" />
 					<span className="sr-only">Back to home</span>
 				</Link>
-				<Suspense>
-					<Theme />
-				</Suspense>{" "}
+				<ThemeButton />
 			</nav>
 			<header className="my-16 md:my-22">
 				<div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">

@@ -1,38 +1,30 @@
 "use client";
 
 import { Moon, Sun } from "lucide-react";
-import { useState } from "react";
-
-type Theme = "light" | "dark";
 
 function applyTheme(shouldUseDark: boolean) {
 	document.documentElement.classList.toggle("dark", shouldUseDark);
 	document.documentElement.classList.toggle("light", !shouldUseDark);
 }
 
-export function ThemeButton({ initialTheme }: { initialTheme: Theme }) {
-	const [isDark, setIsDark] = useState(initialTheme === "dark");
+export function ThemeButton() {
 	const toggleTheme = () => {
-		const nextTheme = isDark ? "light" : "dark";
+		const shouldUseDark = !document.documentElement.classList.contains("dark");
+		const nextTheme = shouldUseDark ? "dark" : "light";
 
-		document.cookie = `theme=${nextTheme}; path=/; max-age=31536000; samesite=lax`;
-		applyTheme(nextTheme === "dark");
-
-		setIsDark(nextTheme === "dark");
+		window.localStorage.setItem("theme", nextTheme);
+		applyTheme(shouldUseDark);
 	};
 
 	return (
 		<button
-			aria-label={`Switch to ${isDark ? "light" : "dark"} theme`}
+			aria-label="Toggle theme"
 			className="flex size-10 cursor-pointer items-center justify-center rounded-full duration-150 ease-out hover:bg-surface-muted active:scale-96 transition-all"
 			onClick={toggleTheme}
 			type="button"
 		>
-			{isDark ? (
-				<Sun className="size-5 text-foreground" />
-			) : (
-				<Moon className="size-5 text-foreground" />
-			)}
+			<Sun className="hidden size-5 text-foreground dark:block" />
+			<Moon className="size-5 text-foreground dark:hidden" />
 		</button>
 	);
 }

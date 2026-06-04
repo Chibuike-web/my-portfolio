@@ -6,7 +6,6 @@ const nextConfig: NextConfig = {
 	cacheComponents: true,
 	experimental: {
 		optimizePackageImports: ["lucide-react", "@base-ui/react"],
-		turbopackFileSystemCacheForBuild: true,
 	},
 	reactStrictMode: true,
 	typedRoutes: true,

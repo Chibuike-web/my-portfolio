@@ -14,9 +14,11 @@ const geistMono = Geist_Mono({
 
 const themeInitScript = String.raw`
 try {
-	const theme = localStorage.getItem("theme");
-	const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-	const shouldUseDark = theme === "dark" || (theme === "system" && prefersDark);
+	const theme = document.cookie
+		.split("; ")
+		.find((cookie) => cookie.startsWith("theme="))
+		?.split("=")[1];
+	const shouldUseDark = theme === "dark";
 
 	document.documentElement.classList.toggle("dark", shouldUseDark);
 	document.documentElement.classList.toggle("light", !shouldUseDark);

@@ -1,5 +1,6 @@
 import { LogoIcon } from "@/icons/logo-icon";
-import { ThemeButton } from "../theme-button";
+import { Suspense } from "react";
+import { Theme } from "../theme";
 
 export function Navbar() {
 	return (
@@ -13,7 +14,9 @@ export function Navbar() {
 					<p className="no-line-height tight text-muted-foreground">Design Engineer</p>
 				</div>
 			</div>
-			<ThemeButton />
+			<Suspense>
+				<Theme />
+			</Suspense>
 		</div>
 	);
 }

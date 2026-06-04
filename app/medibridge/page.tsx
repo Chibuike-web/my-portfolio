@@ -1,9 +1,9 @@
 import { Tag } from "@/components/tag";
-import { ThemeButton } from "@/components/theme-button";
 import { ZoomableImage } from "@/components/zoomable-image";
 import { cn } from "@/lib/utils";
 import { ArrowLeft, ArrowUpLeft } from "lucide-react";
 import Link from "next/link";
+import { cookies } from "next/headers";
 import patientOnboardingFirst from "@/assets/medibridge/patient-onboarding-first.webp";
 import patientOnboardingSecond from "@/assets/medibridge/patient-onboarding-second.webp";
 import patientOnboardingThird from "@/assets/medibridge/patient-onboarding-third.webp";
@@ -32,7 +32,6 @@ import patientTransferFifth from "@/assets/medibridge/patient-transfers-fifth.we
 import patientTransferSixth from "@/assets/medibridge/patient-transfers-sixth.webp";
 import patientTransferSeventh from "@/assets/medibridge/patient-transfers-seventh.webp";
 import ProgressBar from "@/components/progress-bar";
-import { cookies } from "next/headers";
 import { Suspense } from "react";
 import { Theme } from "@/components/theme";
 

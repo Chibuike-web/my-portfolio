@@ -1,50 +1,24 @@
 "use client";
 
 import { Moon, Sun } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
-type Theme = "light" | "dark" | "system";
+type Theme = "light" | "dark";
 
-function getPrefersDark() {
-	if (typeof window === "undefined") {
-		return undefined;
-	}
-	return window.matchMedia("(prefers-color-scheme: dark)").matches;
-}
-
-function applyTheme(theme: Theme) {
-	const shouldUseDark = theme === "dark" || (theme === "system" && getPrefersDark() === true);
-
+function applyTheme(shouldUseDark: boolean) {
 	document.documentElement.classList.toggle("dark", shouldUseDark);
 	document.documentElement.classList.toggle("light", !shouldUseDark);
 }
 
-export function ThemeButton({ initialTheme }: { initialTheme?: string }) {
-	const [isDark, setIsDark] = useState(initialTheme === "dark" ? true : false);
-	useEffect(() => {
-		const localTheme = localStorage.getItem("theme");
-
-		const storedTheme =
-			localTheme === "light" || localTheme === "dark" || localTheme === "system"
-				? localTheme
-				: "system";
-
-		const shouldUseDark =
-			storedTheme === "dark" || (storedTheme === "system" && getPrefersDark() === true);
-
-		applyTheme(storedTheme);
-		setIsDark(shouldUseDark);
-	}, []);
-
+export function ThemeButton({ initialTheme }: { initialTheme: Theme }) {
+	const [isDark, setIsDark] = useState(initialTheme === "dark");
 	const toggleTheme = () => {
 		const nextTheme = isDark ? "light" : "dark";
-		const shouldUseDark = nextTheme === "dark";
 
-		localStorage.setItem("theme", nextTheme);
-		applyTheme(nextTheme);
 		document.cookie = `theme=${nextTheme}; path=/; max-age=31536000; samesite=lax`;
+		applyTheme(nextTheme === "dark");
 
-		setIsDark(shouldUseDark);
+		setIsDark(nextTheme === "dark");
 	};
 
 	return (

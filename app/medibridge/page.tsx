@@ -265,8 +265,10 @@ export default function MedibridgePage() {
 						hospital workflows and documentation processes.
 					</p>
 				</div>
-				<div className="my-6 rounded-xl bg-surface-muted p-4">
-					<p>Video recording coming soon</p>
+				<div className="w-full rounded-2xl flex mt-6 bg-black overflow-hidden">
+					<video controls preload="metadata" width={800} height={450}>
+						<source src="/videos/patient-onboarding.mp4" type="video/mp4" />
+					</video>
 				</div>
 			</section>
 			<section id="patient-management" className="mt-22">
@@ -429,10 +431,7 @@ export default function MedibridgePage() {
 					<p>Video recording coming soon</p>
 				</div>
 			</section>
-			<Link
-				href="/nomba"
-				className="case-study-nav-card"
-			>
+			<Link href="/nomba" className="case-study-nav-card">
 				<ArrowUpLeft className="size-6" />
 
 				<div className="flex flex-col items-end gap-3">

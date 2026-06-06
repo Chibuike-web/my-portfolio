@@ -82,8 +82,8 @@ const navItems = [
 		label: "Patient Management",
 	},
 	{
-		id: "patient-transfer",
-		label: "Patient Transfer",
+		id: "patient-records-transfer",
+		label: "Patient Records Transfer",
 	},
 ];
 
@@ -152,10 +152,10 @@ export default function MedibridgePage() {
 							MediBridge is an AI-powered healthcare platform designed to convert physical and
 							unstructured medical records into structured digital patient data. The platform allows
 							healthcare staff to upload scanned documents, PDFs, and images, automatically extract
-							patient information using AI, review the extracted data, and manage patient transfers
-							between hospitals through a centralized workflow. The system also includes transfer
-							approval flows, record sharing, and structured patient profiles to improve record
-							management and continuity of care.
+							patient information using AI, review the extracted data, and manage patient records
+							transfers between hospitals through a centralized workflow. The system also includes
+							transfer approval flows, record sharing, and structured patient profiles to improve
+							record management and continuity of care.
 						</p>
 					</div>
 					<div className="grid gap-6 sm:grid-cols-2">
@@ -353,8 +353,8 @@ export default function MedibridgePage() {
 				</div>
 			</section>
 
-			<section id="patient-transfer" className="mt-22">
-				<h2 className={cn(headingClass, "mb-3")}>Patient Transfer</h2>
+			<section id="patient-records-transfer" className="mt-22">
+				<h2 className={cn(headingClass, "mb-3")}>Patient Records Transfer</h2>
 				<div className="mt-3 text-muted-foreground font-medium text-pretty flex flex-col gap-2">
 					<p>
 						Another area I focused on was improving how patient records are transferred between
@@ -427,8 +427,10 @@ export default function MedibridgePage() {
 						uncertainty when patients move between healthcare facilities.
 					</p>
 				</div>
-				<div className="my-6 rounded-xl bg-surface-muted p-4">
-					<p>Video recording coming soon</p>
+				<div className="w-full rounded-2xl flex mt-6 bg-black overflow-hidden">
+					<video controls preload="metadata" width={800} height={450}>
+						<source src="/videos/patient-records-transfer.mp4" type="video/mp4" />
+					</video>
 				</div>
 			</section>
 			<Link href="/nomba" className="case-study-nav-card">

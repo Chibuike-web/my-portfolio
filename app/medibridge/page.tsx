@@ -24,13 +24,18 @@ import patientManagementTenth from "@/assets/medibridge/patient-management-tenth
 import patientManagementEleventh from "@/assets/medibridge/patient-management-eleventh.webp";
 import patientManagementTwelfth from "@/assets/medibridge/patient-management-twelfth.webp";
 import patientManagementThirteenth from "@/assets/medibridge/patient-management-thirteenth.webp";
-import patientTransferFirst from "@/assets/medibridge/patient-transfers-first.webp";
-import patientTransferSecond from "@/assets/medibridge/patient-transfers-second.webp";
-import patientTransferThird from "@/assets/medibridge/patient-transfers-third.webp";
-import patientTransferFourth from "@/assets/medibridge/patient-transfers-fourth.webp";
-import patientTransferFifth from "@/assets/medibridge/patient-transfers-fifth.webp";
-import patientTransferSixth from "@/assets/medibridge/patient-transfers-sixth.webp";
-import patientTransferSeventh from "@/assets/medibridge/patient-transfers-seventh.webp";
+import patientRecordsTransferFirst from "@/assets/medibridge/patient-records-transfer-first.webp";
+import patientRecordsTransferSecond from "@/assets/medibridge/patient-records-transfer-second.webp";
+import patientRecordsTransferThird from "@/assets/medibridge/patient-records-transfer-third.webp";
+import patientRecordsTransferFourth from "@/assets/medibridge/patient-records-transfer-fourth.webp";
+import patientRecordsTransferFifth from "@/assets/medibridge/patient-records-transfer-fifth.webp";
+import patientRecordsTransferSixth from "@/assets/medibridge/patient-records-transfer-sixth.webp";
+import patientRecordsTransferSeventh from "@/assets/medibridge/patient-records-transfer-seventh.webp";
+import patientRecordsTransferEighth from "@/assets/medibridge/patient-records-transfer-eighth.webp";
+import patientRecordsTransferNinth from "@/assets/medibridge/patient-records-transfer-ninth.webp";
+import patientRecordsTransferTenth from "@/assets/medibridge/patient-records-transfer-tenth.webp";
+import patientRecordsTransferEleventh from "@/assets/medibridge/patient-records-transfer-eleventh.webp";
+
 import ProgressBar from "@/components/progress-bar";
 import { Suspense } from "react";
 import { ThemeButton } from "@/components/theme-button";
@@ -59,13 +64,17 @@ const patientManagementGridImages = [
 	patientManagementTwelfth,
 	patientManagementThirteenth,
 ];
-const patientTransferGridImages = [
-	patientTransferSecond,
-	patientTransferThird,
-	patientTransferFourth,
-	patientTransferFifth,
-	patientTransferSixth,
-	patientTransferSeventh,
+const patientRecordsTransferGridImages = [
+	patientRecordsTransferSecond,
+	patientRecordsTransferThird,
+	patientRecordsTransferFourth,
+	patientRecordsTransferFifth,
+	patientRecordsTransferSixth,
+	patientRecordsTransferSeventh,
+	patientRecordsTransferEighth,
+	patientRecordsTransferNinth,
+	patientRecordsTransferTenth,
+	patientRecordsTransferEleventh,
 ];
 
 const navItems = [
@@ -386,9 +395,9 @@ export default function MedibridgePage() {
 						containing the patient’s records and securely sends it to the destination hospital.
 					</p>
 				</div>
-				<ZoomableImage src={patientTransferFirst} width={3000} height={1800} alt="" />
+				<ZoomableImage src={patientRecordsTransferFirst} width={3000} height={1800} alt="" />
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-					{patientTransferGridImages.map((image, index) => (
+					{patientRecordsTransferGridImages.map((image, index) => (
 						<ZoomableImage
 							key={`patient-transfer-grid-${index + 1}`}
 							src={image}
@@ -432,6 +441,18 @@ export default function MedibridgePage() {
 						<source src="/videos/patient-records-transfer.mp4" type="video/mp4" />
 					</video>
 				</div>
+				<p className="my-16 md:my-22">
+					This project is currently in active development. You can follow along here{" "}
+					<a
+						className="link"
+						href="https://github.com/Chibuike-web/medibridge"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						Medibridge
+					</a>
+					. More update will be made going forward
+				</p>
 			</section>
 			<Link href="/nomba" className="case-study-nav-card">
 				<ArrowUpLeft className="size-6" />

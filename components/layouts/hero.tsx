@@ -9,8 +9,8 @@ export function Hero() {
 		<div>
 			<div className="tight flex flex-col gap-2 pt-8 pb-10 font-medium text-muted-foreground text-pretty">
 				<p>
-					I’m a <span className="text-foreground">design engineer</span> based in Nigeria. I design
-					and build digital products with a strong focus on structure, usability, and craft.
+					I’m a <span className="text-foreground">design engineer</span>. I design and build digital
+					products with a strong focus on structure, usability, and craft.
 				</p>
 				<p>
 					For the past year and a half, I’ve been building products independently, working across

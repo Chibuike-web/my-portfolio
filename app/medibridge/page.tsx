@@ -357,8 +357,10 @@ export default function MedibridgePage() {
 						a clearer picture of a patient's care journey.
 					</p>
 				</div>
-				<div className="my-6 rounded-xl bg-surface-muted p-4">
-					<p>Video recording coming soon</p>
+				<div className="w-full rounded-2xl flex mt-6 bg-black overflow-hidden">
+					<video controls preload="metadata" width={800} height={450}>
+						<source src="/videos/patient-management-1.mp4" type="video/mp4" />
+					</video>
 				</div>
 			</section>
 

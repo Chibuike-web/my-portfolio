@@ -45,16 +45,7 @@ export default function ProgressBar({
 		};
 	}, []);
 	return (
-		<motion.div
-			initial={{ y: 100, opacity: 0 }}
-			animate={{ y: 0, opacity: 1 }}
-			transition={{
-				duration: 0.35,
-				ease: [0.22, 1, 0.36, 1],
-			}}
-			className="fixed bottom-4 left-1/2 z-[100] w-[calc(100%_-_2rem)] max-w-[21.875rem] -translate-x-1/2 overflow-hidden rounded-3xl bg-[#464648] text-white"
-		>
-			{" "}
+		<div className="progress-mount fixed bottom-4 left-1/2 z-[100] w-[calc(100%_-_2rem)] max-w-[21.875rem] -translate-x-1/2 overflow-hidden rounded-3xl bg-[#464648] text-white">
 			<button
 				className="sticky top-0 z-10 flex w-full cursor-point items-center justify-between bg-[#464648] px-5 py-3 text-left"
 				onClick={() => {
@@ -107,6 +98,6 @@ export default function ProgressBar({
 					</motion.div>
 				)}
 			</AnimatePresence>
-		</motion.div>
+		</div>
 	);
 }

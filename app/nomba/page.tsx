@@ -63,7 +63,7 @@ const navItems = [
 export default function NombaPage() {
 	return (
 		<main className="page-shell">
-			<nav className="flex items-center justify-between">
+			<nav className="mount-1 flex items-center justify-between">
 				<Link
 					href="/"
 					aria-label="Back to home"
@@ -74,7 +74,7 @@ export default function NombaPage() {
 				</Link>
 				<ThemeButton />
 			</nav>
-			<header className="my-16 md:my-22">
+			<header className="mount-2 my-16 md:my-22">
 				<div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
 					<div className="flex flex-col gap-3">
 						<h1 className="text-[1.125rem] font-semibold tight text-balance">Nomba</h1>
@@ -97,7 +97,7 @@ export default function NombaPage() {
 			</header>
 			<section
 				id="overview"
-				className="my-22 grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-x-6 md:gap-y-8"
+				className="mount-3 my-22 grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-x-6 md:gap-y-8"
 			>
 				<div className="flex w-full flex-col gap-2">
 					<p className="font-secondary font-semibold text-foreground">PROBLEM STATEMENT</p>
@@ -394,6 +394,7 @@ export default function NombaPage() {
 			</section>
 			<Link
 				href="/medibridge"
+				prefetch={true}
 				className="case-study-nav-card"
 			>
 				<div className="flex flex-col gap-3">

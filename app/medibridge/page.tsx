@@ -99,7 +99,7 @@ const navItems = [
 export default function MedibridgePage() {
 	return (
 		<main className="page-shell">
-			<nav className="flex items-center justify-between">
+			<nav className="mount-1 flex items-center justify-between">
 				<Link
 					href="/"
 					aria-label="Back to home"
@@ -110,7 +110,7 @@ export default function MedibridgePage() {
 				</Link>
 				<ThemeButton />
 			</nav>
-			<header className="my-16 md:my-22">
+			<header className="mount-2 my-16 md:my-22">
 				<div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
 					<div className="flex flex-col gap-3">
 						<h1 className="text-[1.125rem] font-semibold tight text-balance">Medibridge</h1>
@@ -131,7 +131,7 @@ export default function MedibridgePage() {
 					</div>
 				</div>
 			</header>
-			<section id="overview" className="my-22">
+			<section id="overview" className="mount-3 my-22">
 				<div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-x-6 md:gap-y-8">
 					<div className="flex w-full flex-col gap-2">
 						<p className="font-secondary font-semibold text-foreground">PROBLEM STATEMENT</p>
@@ -456,7 +456,7 @@ export default function MedibridgePage() {
 					. More update will be made going forward
 				</p>
 			</section>
-			<Link href="/nomba" className="case-study-nav-card">
+			<Link href="/nomba" prefetch={true} className="case-study-nav-card">
 				<ArrowUpLeft className="size-6" />
 
 				<div className="flex flex-col items-end gap-3">

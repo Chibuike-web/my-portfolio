@@ -7,7 +7,7 @@ import { ReactNode } from "react";
 export function Hero() {
 	return (
 		<div>
-			<div className="tight flex flex-col gap-2 pt-8 pb-10 font-medium text-muted-foreground text-pretty">
+			<div className="mount-2 tight flex flex-col gap-2 pt-8 pb-10 font-medium text-muted-foreground text-pretty">
 				<p>
 					I’m a <span className="text-foreground">design engineer</span>. I design and build digital
 					products with a strong focus on structure, usability, and craft.
@@ -21,6 +21,7 @@ export function Hero() {
 					Recently, I’ve been building{" "}
 					<Link
 						href="/medibridge"
+						prefetch={true}
 						className="link rounded border border-transparent focus-visible:border-muted-foreground focus-visible:outline-none"
 					>
 						MediBridge
@@ -33,7 +34,7 @@ export function Hero() {
 					products.
 				</p>
 			</div>
-			<div className="flex flex-wrap gap-x-3 gap-y-2">
+			<div className="mount-3 flex flex-wrap gap-x-3 gap-y-2">
 				<HeroButton link="mailto:chibuikemaduabuchi2023@gmail.com">
 					<EmailIcon /> <span className="font-semibold">Mail</span>
 				</HeroButton>

@@ -282,3 +282,55 @@ body {
 @utility link {
 	@apply font-medium underline underline-offset-1 text-foreground;
 }
+
+@keyframes progressMount {
+	from {
+		opacity: 0;
+		transform: translateY(100px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.progress-mount {
+		animation: progressMount 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+	}
+}
+
+@keyframes mount {
+	from {
+		opacity: 0;
+		transform: translateY(0.75rem);
+		filter: blur(4px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+		filter: blur(0);
+	}
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.mount-1 {
+		animation: mount 0.4s cubic-bezier(0.23, 1, 0.32, 1) both;
+	}
+	.mount-2 {
+		animation: mount 0.4s cubic-bezier(0.23, 1, 0.32, 1) both;
+		animation-delay: 0.15s;
+	}
+	.mount-3 {
+		animation: mount 0.4s cubic-bezier(0.23, 1, 0.32, 1) both;
+		animation-delay: 0.3s;
+	}
+	.mount-4 {
+		animation: mount 0.4s cubic-bezier(0.23, 1, 0.32, 1) both;
+		animation-delay: 0.45s;
+	}
+	.mount-5 {
+		animation: mount 0.4s cubic-bezier(0.23, 1, 0.32, 1) both;
+		animation-delay: 0.6s;
+	}
+}

@@ -24,11 +24,11 @@ export function Projects() {
 			<h1 className="tight font-medium text-[1rem] text-foreground">Projects</h1>
 			<div className="group/projects w-full flex flex-col gap-4 pt-10 md:flex-row md:items-center">
 				{projects.map((project) => (
-				<Link
-					key={project.href}
-					href={project.href}
-					prefetch={true}
-					className="relative w-full overflow-hidden active:scale-[1] rounded-3xl border border-border bg-surface-muted p-1.5 transition-all duration-200 ease-out group-hover/projects:opacity-35 hover:scale-[1.02] hover:!opacity-100 focus-visible:!opacity-100 md:flex-1"
+					<Link
+						key={project.href}
+						href={project.href}
+						prefetch={false}
+						className="relative w-full overflow-hidden active:scale-[1] rounded-3xl border border-border bg-surface-muted p-1.5 transition-all duration-200 ease-out group-hover/projects:opacity-35 hover:scale-[1.02] hover:!opacity-100 focus-visible:!opacity-100 md:flex-1"
 					>
 						<div className="relative aspect-[367/350] w-full overflow-hidden rounded-[1.125rem] bg-background">
 							<Image

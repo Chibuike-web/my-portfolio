@@ -1,5 +1,5 @@
 import { Tag } from "@/components/tag";
-import { ZoomableImage } from "@/components/zoomable-image";
+import { ZoomableImageGroup } from "@/components/zoomable-image-group";
 import { cn } from "@/lib/utils";
 import { ArrowLeft, ArrowUpLeft } from "lucide-react";
 import Link from "next/link";
@@ -231,19 +231,12 @@ export default function MedibridgePage() {
 					formats and guides staff through reviewing extracted information before saving it into the
 					patient profile.
 				</p>
-				<ZoomableImage src={patientOnboardingFirst} width={3000} height={1800} alt="" />
-				<div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-					{patientOnboardingGridImages.map((image, index) => (
-						<ZoomableImage
-							key={`patient-onboarding-grid-${index + 1}`}
-							src={image}
-							width={3000}
-							height={1800}
-							alt=""
-							className="md:rounded-lg"
-						/>
-					))}
-				</div>
+				<ZoomableImageGroup
+					images={[patientOnboardingFirst, ...patientOnboardingGridImages]}
+					width={3000}
+					height={1800}
+					alt=""
+				/>
 
 				<div className="mt-6 text-muted-foreground font-medium text-pretty flex flex-col gap-2">
 					<p>
@@ -310,19 +303,12 @@ export default function MedibridgePage() {
 						and carried across different stages of patient care.
 					</p>
 				</div>
-				<ZoomableImage src={patientManagementFirst} width={3000} height={1800} alt="" />
-				<div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-					{patientManagementGridImages.map((image, index) => (
-						<ZoomableImage
-							key={`patient-management-grid-${index + 1}`}
-							src={image}
-							width={3000}
-							height={1800}
-							alt=""
-							className="md:rounded-lg"
-						/>
-					))}
-				</div>
+				<ZoomableImageGroup
+					images={[patientManagementFirst, ...patientManagementGridImages]}
+					width={3000}
+					height={1800}
+					alt=""
+				/>
 				<div className="mt-6 text-muted-foreground font-medium text-pretty flex flex-col gap-2">
 					<p>
 						Managing patient information in MediBridge goes beyond storing uploaded medical
@@ -362,6 +348,11 @@ export default function MedibridgePage() {
 						<source src="/videos/patient-management-1.mp4" type="video/mp4" />
 					</video>
 				</div>
+				<div className="w-full rounded-2xl flex mt-6 bg-black overflow-hidden">
+					<video controls preload="metadata" width={800} height={450}>
+						<source src="/videos/patient-management-2.mp4" type="video/mp4" />
+					</video>
+				</div>
 			</section>
 
 			<section id="patient-records-transfer" className="mt-22">
@@ -397,19 +388,12 @@ export default function MedibridgePage() {
 						containing the patient’s records and securely sends it to the destination hospital.
 					</p>
 				</div>
-				<ZoomableImage src={patientRecordsTransferFirst} width={3000} height={1800} alt="" />
-				<div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-					{patientRecordsTransferGridImages.map((image, index) => (
-						<ZoomableImage
-							key={`patient-transfer-grid-${index + 1}`}
-							src={image}
-							width={3000}
-							height={1800}
-							alt=""
-							className="md:rounded-lg"
-						/>
-					))}
-				</div>
+				<ZoomableImageGroup
+					images={[patientRecordsTransferFirst, ...patientRecordsTransferGridImages]}
+					width={3000}
+					height={1800}
+					alt=""
+				/>
 				<div className="text-muted-foreground font-medium text-pretty flex flex-col gap-2 mt-6">
 					<p>
 						Transfers begin from an existing patient profile to ensure records are already verified
@@ -456,7 +440,7 @@ export default function MedibridgePage() {
 					. More update will be made going forward
 				</p>
 			</section>
-			<Link href="/nomba" prefetch={true} className="case-study-nav-card">
+			<Link href="/nomba" prefetch={false} className="case-study-nav-card">
 				<ArrowUpLeft className="size-6" />
 
 				<div className="flex flex-col items-end gap-3">

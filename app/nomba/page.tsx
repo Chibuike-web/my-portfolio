@@ -392,11 +392,7 @@ export default function NombaPage() {
 					/>
 				</div>
 			</section>
-			<Link
-				href="/medibridge"
-				prefetch={true}
-				className="case-study-nav-card"
-			>
+			<Link href="/medibridge" prefetch={false} className="case-study-nav-card">
 				<div className="flex flex-col gap-3">
 					<p className="text-muted-foreground font-medium no-line-height">Next</p>
 					<p className="text-foreground font-medium no-line-height">Medibridge</p>

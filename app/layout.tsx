@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import { Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
-	variable: "--font-inter",
+const sans = Inter({
+	variable: "--font-sans",
 	subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-	variable: "--font-geist-mono",
+const mono = Geist_Mono({
+	variable: "--font-mono",
 	subsets: ["latin"],
 });
 
@@ -57,7 +57,7 @@ export default function RootLayout({
 	return (
 		<html
 			lang="en"
-			className={`${inter.variable} ${geistMono.variable} antialiased`}
+			className={`${sans.variable} ${mono.variable} antialiased`}
 			suppressHydrationWarning
 		>
 			<head>

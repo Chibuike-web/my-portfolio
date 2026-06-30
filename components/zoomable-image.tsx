@@ -19,9 +19,9 @@ export function ZoomableImage({ src, alt, width, height, className }: ZoomableIm
 	const layoutId = `zoom-image-${src.src}`;
 
 	const handleOpen = () => {
+		setIsZoomed(true);
 		document.documentElement.style.overflow = "hidden";
 		document.body.style.overflow = "hidden";
-		setIsZoomed(true);
 	};
 
 	const handleClose = () => {

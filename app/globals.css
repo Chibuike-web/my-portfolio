@@ -33,8 +33,8 @@
 	--green: oklch(55% 0.14 145);
 	--green-muted: oklch(55% 0.14 145 / 30%);
 
-	--font-primary: var(--font-inter);
-	--font-secondary: var(--font-geist-mono);
+	--font-primary: var(--font-sans);
+	--font-secondary: var(--font-mono);
 	color-scheme: light;
 }
 
@@ -304,7 +304,7 @@ body {
 	from {
 		opacity: 0;
 		transform: translateY(0.75rem);
-		filter: blur(4px);
+		filter: blur(10px);
 	}
 	to {
 		opacity: 1;
@@ -319,18 +319,18 @@ body {
 	}
 	.mount-2 {
 		animation: mount 0.4s cubic-bezier(0.23, 1, 0.32, 1) both;
-		animation-delay: 0.15s;
+		animation-delay: 0.2s;
 	}
 	.mount-3 {
 		animation: mount 0.4s cubic-bezier(0.23, 1, 0.32, 1) both;
-		animation-delay: 0.3s;
+		animation-delay: 0.4s;
 	}
 	.mount-4 {
 		animation: mount 0.4s cubic-bezier(0.23, 1, 0.32, 1) both;
-		animation-delay: 0.45s;
+		animation-delay: 0.6s;
 	}
 	.mount-5 {
 		animation: mount 0.4s cubic-bezier(0.23, 1, 0.32, 1) both;
-		animation-delay: 0.6s;
+		animation-delay: 0.8s;
 	}
 }

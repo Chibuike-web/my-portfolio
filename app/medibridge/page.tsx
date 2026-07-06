@@ -115,10 +115,10 @@ export default function MedibridgePage() {
 					<div className="flex flex-col gap-3">
 						<h1 className="text-[1.125rem] font-semibold tight text-balance">Medibridge</h1>
 						<div className="flex items-center gap-1.5">
-							<p className="text-[1rem] font-medium text-muted-foreground tight no-line-height">
+							<p className="text-[1rem] font-medium text-muted-foreground text-balance tight no-line-height">
 								AI-powered healthcare management system
 							</p>
-							<span className="size-0.5 rounded-full bg-muted-foreground" />
+							<span className="size-0.5 rounded-full bg-muted-foreground flex shrink-0" />
 							<p className="text-[1rem] font-medium text-muted-foreground tight no-line-height">
 								2025
 							</p>

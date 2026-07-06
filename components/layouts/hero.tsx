@@ -1,6 +1,7 @@
 import { EmailIcon } from "@/icons/email-icon";
 import { GithubIcon } from "@/icons/github-icon";
 import { LinkedinIcon } from "@/icons/linkedin-icon";
+import { ResumeIcon } from "@/icons/resume-icon";
 import Link from "next/link";
 import { ReactNode } from "react";
 
@@ -13,15 +14,14 @@ export function Hero() {
 					products with a strong focus on structure, usability, and craft.
 				</p>
 				<p>
-					For the past year and a half, I’ve been building products independently, working across
-					product thinking, interface design, and frontend engineering. I care about systems that
-					feel clear, fast, and intuitive to use.
+					I work across product thinking, interface design, and frontend engineering, with a focus
+					on complex workflows, data-heavy interfaces, and systems that need to feel simple without
+					losing depth.
 				</p>
 				<p>
 					Recently, I’ve been building{" "}
 					<Link
 						href="/medibridge"
-						prefetch={true}
 						className="link rounded border border-transparent focus-visible:border-muted-foreground focus-visible:outline-none"
 					>
 						MediBridge
@@ -36,13 +36,18 @@ export function Hero() {
 			</div>
 			<div className="mount-3 flex flex-wrap gap-x-3 gap-y-2">
 				<HeroButton link="mailto:chibuikemaduabuchi2023@gmail.com">
-					<EmailIcon /> <span className="font-semibold">Mail</span>
+					<EmailIcon className="shrink-0" /> <span className="font-semibold">Mail</span>
 				</HeroButton>
 				<HeroButton link="https://github.com/Chibuike-web">
-					<GithubIcon /> <span className="font-semibold">Github</span>
+					<GithubIcon className="shrink-0" /> <span className="font-semibold">Github</span>
 				</HeroButton>
 				<HeroButton link="https://www.linkedin.com/in/chibuike-maduabuchi/">
-					<LinkedinIcon /> <span className="font-semibold">Linkedin</span>
+					<LinkedinIcon className="shrink-0" />
+					<span className="font-semibold">Linkedin</span>
+				</HeroButton>
+				<HeroButton link="https://drive.google.com/file/d/1lB6mPhuiRfdUAimr9VTGugW6r2dQsEvZ/view?usp=sharing">
+					<ResumeIcon className="size-4 shrink-0" />
+					<span className="font-semibold ">Resume</span>
 				</HeroButton>
 			</div>
 		</div>

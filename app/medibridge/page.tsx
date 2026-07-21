@@ -240,31 +240,18 @@ export default function MedibridgePage() {
 
 				<div className="mt-6 text-muted-foreground font-medium text-pretty flex flex-col gap-2">
 					<p>
-						Patient onboarding is usually the first point where hospital staff interact with a new
-						record, so I designed the experience to feel simple, reliable, and easy to validate.
-						Instead of trying to extract everything at once, I limited the onboarding flow to
-						personal patient information like name, age, gender, contact details, and identifiers.
-						Keeping the scope smaller at this stage made the extraction process more accurate and
-						easier to review before anything is saved. I also made sure AI-generated information is
-						never added directly into the system without verification. Extracted fields remain
-						editable so staff can confirm, correct, or complete missing details before creating the
-						patient record. This helps reduce the chances of incorrect information becoming part of
-						a patient’s history.
+						Patient onboarding is often the first interaction hospital staff have with a new record,
+						so the experience needed to feel simple and reliable. I limited the initial extraction
+						to essential information such as the patient’s name, age, gender, contact details, and
+						identifiers. Keeping the scope focused makes the results easier to review and reduces the
+						risk of incorrect information entering the patient’s history.
 					</p>
 					<p>
-						Once the patient has been created digitally in the platform, additional medical
-						information can be added gradually from the patient profile over time. Staff can enter
-						information manually, or upload documents for AI-assisted extraction when needed. This
-						creates a more flexible workflow without making onboarding feel heavy or overwhelming. I
-						grouped the extracted information into structured sections to make the review process
-						easier and reduce cognitive load. Organizing details clearly helps staff scan records
-						faster and spot missing or incorrect information more easily.
-					</p>
-					<p>
-						Hospitals already work with different document types and varying file quality, so I
-						designed the upload flow to support PDFs, scanned documents, and images instead of
-						relying on a strict template. This makes the experience fit more naturally into existing
-						hospital workflows and documentation processes.
+						AI-extracted information is never saved automatically. Every field remains editable,
+						allowing staff to correct errors and complete missing details before confirming the
+						patient. The upload flow also supports the document formats hospitals already use,
+						including PDFs, scanned files, images, and Word documents, so it can fit into existing
+						workflows without requiring hospitals to change how their records are prepared.
 					</p>
 				</div>
 				<div className="w-full rounded-2xl flex mt-6 bg-black overflow-hidden">
@@ -311,36 +298,18 @@ export default function MedibridgePage() {
 				/>
 				<div className="mt-6 text-muted-foreground font-medium text-pretty flex flex-col gap-2">
 					<p>
-						Managing patient information in MediBridge goes beyond storing uploaded medical
-						documents. The record system is built around editable healthcare data that can grow and
-						change as a patient’s condition, treatment, and medical history evolve. Instead of
-						making healthcare staff dig through long PDFs, scanned forms, or scattered notes,
-						information is organized into sections like medications, allergies, diagnoses,
-						procedures, immunizations, laboratory results, and medical history. This makes records
-						easier to scan, review, and update during busy clinical workflows where quick access to
-						information matters.
+						Once the information was divided into clinical sections, the next challenge was keeping
+						a growing patient record easy to navigate. Each area uses list and detail views, allowing
+						staff to scan existing records before opening a specific entry for more information.
+						Several record types also include history views, making it easier to understand how
+						individual details have changed over time.
 					</p>
 					<p>
-						The system also supports ongoing record management directly from the patient profile.
-						Since healthcare information changes regularly, staff can add, edit, or update details
-						without replacing entire documents or creating duplicate records. New medications can be
-						prescribed, allergies updated, diagnoses reviewed, and procedures recorded as treatment
-						continues. This helps keep patient records current instead of turning them into a
-						collection of outdated files.
-					</p>
-					<p>
-						While MediBridge still supports document uploads and attachments, extracted and manually
-						entered information becomes part of a central patient record that is easier to manage,
-						review, and share across hospitals. This creates a more connected and scalable approach
-						than relying solely on paper records or uploaded files that become difficult to search
-						and maintain over time.
-					</p>
-					<p>
-						To improve accountability, every change made to a patient record is captured in a
-						dedicated activity log. Healthcare staff can see what information was updated, when the
-						change was made, and how the record has changed over time. This provides better
-						visibility across facilities, reduces confusion around record updates, and helps create
-						a clearer picture of a patient's care journey.
+						Source documents and attachments remain available when additional context is needed, but
+						staff do not have to search through every file during routine care. Confirmed patient
+						information is presented in a form that is easier to review, while the original documents
+						remain connected to the record. This creates a balance between quick access and the
+						supporting information behind each patient’s history.
 					</p>
 				</div>
 				<div className="w-full rounded-2xl flex mt-6 bg-black overflow-hidden">
@@ -357,35 +326,19 @@ export default function MedibridgePage() {
 
 			<section id="patient-records-transfer" className="mt-22">
 				<h2 className={cn(headingClass, "mb-3")}>Patient Records Transfer</h2>
-				<div className="mt-3 text-muted-foreground font-medium text-pretty flex flex-col gap-2">
+				<div className="mt-3 mb-6 text-muted-foreground font-medium text-pretty flex flex-col gap-2">
 					<p>
 						Another area I focused on was improving how patient records are transferred between
-						hospitals. In many cases, transfers still involve manually sending files through email,
-						printed documents, messaging apps, or other disconnected channels. This can make records
-						difficult to track, review, and verify during patient movement between healthcare
-						facilities. I wanted the process to feel more structured and transparent, so I designed
-						a transfer system that starts directly from an existing patient record inside
-						MediBridge.
+						hospitals. Transfers often rely on email, printed documents, messaging apps, or other
+						disconnected channels, making records difficult to track, review, and verify. MediBridge
+						brings this process into a structured workflow that begins from an existing patient
+						profile.
 					</p>
 					<p>
-						Once the patient approves the request, the system generates a structured PDF document
-						containing the patient’s records and securely sends it to the destination hospital.
-					</p>
-				</div>
-
-				<div className="mt-3 text-muted-foreground font-medium text-pretty flex flex-col gap-2 mb-6">
-					<p>
-						Transfers begin from an existing patient profile to ensure records are already verified
-						and organized before being shared with another hospital. During the transfer flow,
-						healthcare staff can select the receiving hospital, choose the record types to include,
-						and provide additional context like transfer notes or special instructions. Starting
-						from an existing patient record helps reduce missing information and makes the process
-						easier to manage, especially during urgent referrals where doctors need quick access to
-						reliable patient history.
-					</p>
-					<p>
-						Once the patient approves the request, the system generates a structured PDF document
-						containing the patient’s records and securely sends it to the destination hospital.
+						Healthcare staff can prepare a transfer using verified records and provide any necessary
+						context before sending it for patient approval. Once approved, the selected records are
+						made available to the receiving hospital through a secure, time-limited, read-only link
+						instead of sending raw files through disconnected channels.
 					</p>
 				</div>
 				<ZoomableImageGroup
@@ -396,30 +349,17 @@ export default function MedibridgePage() {
 				/>
 				<div className="text-muted-foreground font-medium text-pretty flex flex-col gap-2 mt-6">
 					<p>
-						Transfers begin from an existing patient profile to ensure records are already verified
-						and organized before being shared with another hospital. During the transfer flow,
-						healthcare staff can select the receiving hospital, choose the record types to include,
-						and provide additional context like transfer notes or special instructions. Starting
-						from an existing patient record helps reduce missing information and makes the process
-						easier to manage, especially during urgent referrals where doctors need quick access to
-						reliable patient history.
+						The most important part of the transfer experience was keeping the patient involved. A
+						hospital cannot release the selected records immediately after creating a request. The
+						patient first receives an email containing a secure approval link, where they can review
+						the receiving hospital, the requested records, and the transfer details before approving
+						or declining.
 					</p>
 					<p>
-						I also wanted patients to have visibility and control over how their records are shared.
-						Before any transfer is completed, the patient receives an approval request link through
-						their registered email. The link opens a browser-based approval page where they can
-						review the request details and confirm whether they want to proceed with the transfer.
-						To make the approval process clearer and more trustworthy, the confirmation screen
-						explains what records are being shared, who the receiving hospital is, and why patient
-						approval is required before records can be released.
-					</p>
-					<p>
-						Instead of transferring raw files individually, the system generates a structured PDF
-						document containing the patient’s records in a more organized and easier-to-review
-						format for the receiving hospital. I also included clear transfer status states so
-						healthcare staff can track whether a request is pending, approved, declined, or
-						completed. This creates better visibility across the transfer process and reduces
-						uncertainty when patients move between healthcare facilities.
+						Approval does not give the receiving hospital permanent access to the patient’s full
+						history. The recipient must verify a short-lived code before opening an expiring,
+						read-only view limited to the approved records. Transfer statuses also help the initiating
+						hospital see whether a request is pending, approved, declined, or completed.
 					</p>
 				</div>
 				<div className="w-full rounded-2xl flex mt-6 bg-black overflow-hidden">

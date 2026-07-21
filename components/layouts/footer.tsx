@@ -17,7 +17,7 @@ export function Footer() {
 			<button
 				type="button"
 				aria-label={copied ? "Email copied" : "Copy email address"}
-				className="group relative flex max-w-full cursor-pointer items-center break-all text-left text-pretty sm:break-normal"
+				className="group relative flex max-w-full cursor-pointer items-center break-all text-left text-pretty sm:break-normal border border-transparent focus-visible:border-muted-foreground focus-visible:outline-none rounded"
 				onClick={copyEmail}
 			>
 				chibuikemaduabuchi2023@gmail.com

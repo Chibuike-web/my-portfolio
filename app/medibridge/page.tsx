@@ -24,6 +24,8 @@ import patientManagementTenth from "@/assets/medibridge/patient-management-tenth
 import patientManagementEleventh from "@/assets/medibridge/patient-management-eleventh.webp";
 import patientManagementTwelfth from "@/assets/medibridge/patient-management-twelfth.webp";
 import patientManagementThirteenth from "@/assets/medibridge/patient-management-thirteenth.webp";
+import patientManagementFourteenth from "@/assets/medibridge/patient-management-fourteenth.webp";
+import patientManagementFifteenth from "@/assets/medibridge/patient-management-fifteenth.webp";
 import patientRecordsTransferFirst from "@/assets/medibridge/patient-records-transfer-first.webp";
 import patientRecordsTransferSecond from "@/assets/medibridge/patient-records-transfer-second.webp";
 import patientRecordsTransferThird from "@/assets/medibridge/patient-records-transfer-third.webp";
@@ -63,6 +65,8 @@ const patientManagementGridImages = [
 	patientManagementEleventh,
 	patientManagementTwelfth,
 	patientManagementThirteenth,
+	patientManagementFourteenth,
+	patientManagementFifteenth,
 ];
 const patientRecordsTransferGridImages = [
 	patientRecordsTransferSecond,

@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 	metadataBase: new URL("https://chibuike-maduabuchi.vercel.app"),
 	title: {
 		default: "Chibuike Maduabuchi",
-		template: "%s | Chibuike Maduabuchi",
+		template: "%s - Chibuike Maduabuchi",
 	},
 	description:
 		"Portfolio of Chibuike Maduabuchi, a design engineer blending design and code to build thoughtful digital products.",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
 		icon: [{ url: "/profile.png", type: "image/svg+xml", sizes: "any" }],
 	},
 	openGraph: {
-		title: "Chibuike Maduabuchi | Design Engineer",
+		title: "Chibuike Maduabuchi - Design Engineer",
 		description: "AI systems, design engineering, and product-focused frontend work.",
 		url: "https://chibuike-maduabuchi.vercel.app",
 		siteName: "Chibuike Maduabuchi",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Chibuike Maduabuchi | Design Engineer",
+		title: "Chibuike Maduabuchi - Design Engineer",
 		description: "AI systems, design engineering, and product-focused frontend work.",
 		images: ["/og-image.png"],
 	},
